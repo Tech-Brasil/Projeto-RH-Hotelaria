@@ -1,0 +1,9 @@
+# Arquivos e pastas a ignorar
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.cache
+*.log
