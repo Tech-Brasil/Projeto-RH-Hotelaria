@@ -78,6 +78,14 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Projeto_RHotelariaDataSet.cs">
+      <DependentUpon>Projeto_RHotelariaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Projeto_RHotelariaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projeto_RHotelariaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Criptografia.cs" />
     <Compile Include="Utils\Validacoes.cs" />
@@ -91,6 +99,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Projeto_RHotelariaDataSet.xsc">
+      <DependentUpon>Projeto_RHotelariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Projeto_RHotelariaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Projeto_RHotelariaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Projeto_RHotelariaDataSet.xss">
+      <DependentUpon>Projeto_RHotelariaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,6 +130,9 @@
     <Folder Include="Forms\Principal\Funcionario\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
