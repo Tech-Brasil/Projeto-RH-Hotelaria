@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Projeto_RH_HOTELARIA.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Projeto_RH_HOTELARIA
@@ -16,7 +14,7 @@ namespace Projeto_RH_HOTELARIA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmCarregamento());
         }
     }
 }
