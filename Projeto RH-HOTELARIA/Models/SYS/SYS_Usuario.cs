@@ -10,7 +10,7 @@ namespace Projeto_RH_HOTELARIA.Models.SYS
     public class SYS_Usuario
     {
         public int ID { get; set; }
-        public char RG { get; set; }
+        public string RG { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Role { get; set; }

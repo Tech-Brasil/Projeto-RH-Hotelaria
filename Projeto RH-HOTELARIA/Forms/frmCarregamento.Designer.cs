@@ -32,7 +32,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -75,12 +75,14 @@
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // progressBar1
+            // guna2ProgressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(72, 289);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(414, 23);
-            this.progressBar1.TabIndex = 4;
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(72, 289);
+            this.guna2ProgressBar1.Name = "guna2ProgressBar1";
+            this.guna2ProgressBar1.Size = new System.Drawing.Size(413, 30);
+            this.guna2ProgressBar1.TabIndex = 5;
+            this.guna2ProgressBar1.Text = "guna2ProgressBar1";
+            this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // frmCarregamento
             // 
@@ -88,7 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(560, 324);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.guna2ProgressBar1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -114,6 +116,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
     }
 }
