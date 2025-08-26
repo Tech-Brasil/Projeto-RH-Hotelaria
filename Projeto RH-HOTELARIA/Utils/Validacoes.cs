@@ -11,34 +11,18 @@ namespace Projeto_RH_HOTELARIA.Utils
     {
         public static bool EmailValido(string email)
         {
-            try
-            {
-
-                if (string.IsNullOrWhiteSpace(email))
-                {
-                    return false;
-                }
-                email = email.Trim();
-                if (email.Length > 250)
-                {
-                    return false;
-                }
-                var mailAddress = new System.Net.Mail.MailAddress(email);
-                return true;
-
-            }
-            catch
+            email = email.Trim();
+            if (string.IsNullOrEmpty(email) || email.Length > 200)
             {
                 return false;
             }
+
+            var mailAddress = new System.Net.Mail.MailAddress(email);
+            return true;
         }
         public static bool SenhaValida(string senha)
         {
-            if (string.IsNullOrWhiteSpace(senha))
-            {
-                return false;
-            }
-            if (senha.Length < 8)
+            if (senha.Length < 8 || string.IsNullOrWhiteSpace(senha))
             {
                 return false;
             }
@@ -67,38 +51,28 @@ namespace Projeto_RH_HOTELARIA.Utils
         }
         public static bool DataValida(DateTime dataInicial, DateTime dataFinal)
         {
-            try
+            if (dataInicial == DateTime.MinValue)
             {
-                if (dataInicial == DateTime.MinValue)
-                {
-                    throw new ArgumentException("Data inicial não pode ser vazia ou inválida.");
-                }
-                if (dataFinal == DateTime.MinValue)
-                {
-                    throw new ArgumentException("Data final não pode ser vazia ou inválida.");
-                }
-                if (dataInicial.Year < 1900)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(dataInicial), "Data inicial muito antiga.");
-                }
-                if (dataFinal > DateTime.Now.AddYears(10))
-                {
-                    throw new ArgumentOutOfRangeException(nameof(dataInicial), "Data final muito distante no futuro.");
-                }
-                if (dataFinal <= dataInicial)
-                {
-                    throw new InvalidOperationException("Data final deve ser maior ou igual à data inicial.");
-                }
-                return true;
+                throw new ArgumentException("Data inicial não pode ser vazia ou inválida.");
             }
-            catch (ArgumentException)
+            if (dataFinal == DateTime.MinValue)
             {
-                return false;
+                throw new ArgumentException("Data final não pode ser vazia ou inválida.");
             }
-            catch (InvalidOperationException)
+            if (dataInicial.Year < 1900)
             {
-                return false;
+                throw new ArgumentOutOfRangeException(nameof(dataInicial), "Data inicial muito antiga.");
             }
+            if (dataFinal > DateTime.Now.AddYears(10))
+            {
+                throw new ArgumentOutOfRangeException(nameof(dataInicial), "Data final muito distante no futuro.");
+            }
+            if (dataFinal <= dataInicial)
+            {
+                throw new InvalidOperationException("Data final deve ser maior ou igual à data inicial.");
+            }
+            return true;
+
         }
         /*public static bool EstadoValido(string estado)
         {
