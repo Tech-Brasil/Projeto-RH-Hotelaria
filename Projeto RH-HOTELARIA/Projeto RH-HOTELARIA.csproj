@@ -81,7 +81,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\IRepository\IRH_DocumentoEndereco.cs" />
     <Compile Include="Data\IRepository\IRH_DocumentosFuncionario.cs" />
+    <Compile Include="Data\IRepository\IRH_Endereco.cs" />
     <Compile Include="Data\IRepository\IRH_Funcionario.cs" />
     <Compile Include="Data\IRepository\ISYS_Usuario.cs" />
     <Compile Include="Data\Repository\RH_DocumentosFuncionarioRepository.cs" />
