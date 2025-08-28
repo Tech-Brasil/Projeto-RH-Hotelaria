@@ -51,28 +51,56 @@ namespace Projeto_RH_HOTELARIA.Utils
         }
         public static bool DataValida(DateTime dataInicial, DateTime dataFinal)
         {
-            if (dataInicial == DateTime.MinValue)
+            if (dataInicial == DateTime.MinValue || dataFinal == DateTime.MinValue)
             {
-                throw new ArgumentException("Data inicial não pode ser vazia ou inválida.");
+                return false;
             }
-            if (dataFinal == DateTime.MinValue)
+            if (dataInicial.Year < 1900 || dataFinal > DateTime.Now.AddYears(10))
             {
-                throw new ArgumentException("Data final não pode ser vazia ou inválida.");
-            }
-            if (dataInicial.Year < 1900)
-            {
-                throw new ArgumentOutOfRangeException(nameof(dataInicial), "Data inicial muito antiga.");
-            }
-            if (dataFinal > DateTime.Now.AddYears(10))
-            {
-                throw new ArgumentOutOfRangeException(nameof(dataInicial), "Data final muito distante no futuro.");
+                return false;
             }
             if (dataFinal <= dataInicial)
             {
-                throw new InvalidOperationException("Data final deve ser maior ou igual à data inicial.");
+                return false;
             }
             return true;
 
+        }
+        private static bool IsRepeatdSequence(string num)
+        {
+            return num.Distinct().Count() == 1;
+        }
+        private static bool IsSequencialNumero(string num)
+        {
+            var numero = num.Select(c => int.Parse(c.ToString())).ToArray();
+
+            var ascendente = numero.SequenceEqual(Enumerable.Range(numero[0], numero.Length));
+            var descendente = numero.SequenceEqual(Enumerable.Range(numero[0] - numero.Length + 1, numero.Length).Reverse());
+            return ascendente || descendente;
+        }
+        public static bool RgValido(string rg)
+        {
+            rg = rg.Trim();
+            var numeros = Regex.Replace(rg, @"[^0-9]", "");
+
+            if (string.IsNullOrWhiteSpace(numeros))
+            {
+                return false;
+            }
+
+            if (numeros.Length < 7 || numeros.Length > 10)
+            {
+                return false;
+            }
+            if (IsRepeatdSequence(numeros))
+            {
+                return false;
+            }
+            if (IsSequencialNumero(numeros))
+            {
+                return false;
+            }
+            return true;
         }
         /*public static bool EstadoValido(string estado)
         {
@@ -99,5 +127,6 @@ namespace Projeto_RH_HOTELARIA.Utils
         */
 
     }
-}
+
+}   
 
