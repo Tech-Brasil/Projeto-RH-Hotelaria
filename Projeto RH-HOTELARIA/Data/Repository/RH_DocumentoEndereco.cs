@@ -2,44 +2,35 @@
 using Projeto_RH_HOTELARIA.Models.RH;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Configuration;
 
 namespace Projeto_RH_HOTELARIA.Data.Repository
 {
-    public class RH_FuncionarioRepository : IRH_Funcionario
+    public class RH_DocumentoEndereco : IRH_DocumentoEndereco
     {
-        private readonly string _context;
-
-        public RH_FuncionarioRepository()
-        {
-            _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
-        }
-
-        public void Alterar(RH_Funcionario funcionario)
+        public void Atualizar(string rg, int enderecoId)
         {
             throw new NotImplementedException();
         }
 
-        public RH_Funcionario BuscarPorRg(string rg)
+        public void Excluir(string rg, int enderecoId)
         {
             throw new NotImplementedException();
         }
 
-        public void Excluir(string rg)
+        public void Inserir(string rg, int enderecoId)
         {
             throw new NotImplementedException();
         }
 
-        public void Inserir(RH_Funcionario funcionario)
+        public List<RH_Endereco> ListarPorFuncionario(string rg)
         {
             throw new NotImplementedException();
         }
 
-        public List<RH_Funcionario> ListarTodos()
+        List<Models.RH.RH_DocumentoEndereco> IRH_DocumentoEndereco.ListarTodos()
         {
             throw new NotImplementedException();
         }

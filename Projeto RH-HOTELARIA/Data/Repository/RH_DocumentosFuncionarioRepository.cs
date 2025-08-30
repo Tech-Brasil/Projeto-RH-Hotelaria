@@ -17,27 +17,27 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
         }
 
-        public void AlterarDFuncionario(RH_DocumentosFuncionario Dfuncionario)
+        public void Alterar(RH_DocumentosFuncionario documentos)
         {
             throw new NotImplementedException();
         }
 
-        public RH_DocumentosFuncionario BuscarDFuncionarioPorRg(string rg)
+        public RH_DocumentosFuncionario BuscarPorRg(string rg)
         {
             throw new NotImplementedException();
         }
 
-        public void ExcluirDFuncionario(string rg)
+        public void Excluir(string rg)
         {
             throw new NotImplementedException();
         }
 
-        public void InserirDFuncionario(RH_DocumentosFuncionario Dfuncionario)
+        public void Inserir(RH_DocumentosFuncionario documentos)
         {
             throw new NotImplementedException();
         }
 
-        public List<RH_DocumentosFuncionario> ListarDFuncionarios()
+        public List<RH_DocumentosFuncionario> ListarTodos()
         {
             throw new NotImplementedException();
         }
