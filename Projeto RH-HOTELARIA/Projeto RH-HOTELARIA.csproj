@@ -86,7 +86,9 @@
     <Compile Include="Data\IRepository\IRH_Endereco.cs" />
     <Compile Include="Data\IRepository\IRH_Funcionario.cs" />
     <Compile Include="Data\IRepository\ISYS_Usuario.cs" />
+    <Compile Include="Data\Repository\RH_DocumentoEndereco.cs" />
     <Compile Include="Data\Repository\RH_DocumentosFuncionarioRepository.cs" />
+    <Compile Include="Data\Repository\RH_EnderecoRepository.cs" />
     <Compile Include="Data\Repository\RH_FuncionarioRepository.cs" />
     <Compile Include="Data\Repository\SYS_UsuarioRepository.cs" />
     <Compile Include="Forms\frmCarregamento.cs">

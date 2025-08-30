@@ -18,27 +18,27 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
         }
 
-        public void AlterarUsuario(SYS_Usuario usuario)
+        public void Alterar(SYS_Usuario usuario)
         {
             throw new NotImplementedException();
         }
 
-        public SYS_Usuario BuscarUsuarioPorLogin(string login)
+        public SYS_Usuario BuscarPorLogin(string login)
         {
             throw new NotImplementedException();
         }
 
-        public void ExcluirUsuario(int id)
+        public void Excluir(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void InserirUsuario(SYS_Usuario usuario)
+        public void Inserir(SYS_Usuario usuario)
         {
             throw new NotImplementedException();
         }
 
-        public List<SYS_Usuario> ListarUsuarios()
+        public List<SYS_Usuario> ListarTodos()
         {
             throw new NotImplementedException();
         }

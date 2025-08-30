@@ -5,10 +5,10 @@ namespace Projeto_RH_HOTELARIA.Data.IRepository
 {
     public interface IRH_Funcionario
     {
-        void InserirFuncionario(RH_Funcionario funcionario);
-        RH_Funcionario BuscarFuncionarioPorRg(string rg);
-        List<RH_Funcionario> ListarFuncionarios();
-        void AlterarFuncionario(RH_Funcionario funcionario);
-        void ExcluirFuncionario(string rg);
+        void Inserir(RH_Funcionario funcionario);
+        RH_Funcionario BuscarPorRg(string rg);
+        List<RH_Funcionario> ListarTodos();
+        void Alterar(RH_Funcionario funcionario);
+        void Excluir(string rg);
     }
 }
