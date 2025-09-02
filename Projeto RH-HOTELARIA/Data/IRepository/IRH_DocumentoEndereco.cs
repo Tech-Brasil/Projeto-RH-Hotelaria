@@ -8,7 +8,8 @@ namespace Projeto_RH_HOTELARIA.Data.IRepository
         void Inserir(string rg, int enderecoId);
         void Atualizar(string rg, int enderecoId);
         void Excluir(string rg, int enderecoId);
-        List<RH_Endereco> ListarPorFuncionario(string rg);
+
+        List<RH_DocumentoEndereco> ListarPorFuncionario(string rg);
         List<RH_DocumentoEndereco> ListarTodos();
     }
 }
