@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TxtBox_Usuario = new System.Windows.Forms.TextBox();
+            this.TxtBox_Senha = new System.Windows.Forms.TextBox();
+            this.Btn_Login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TxtBox_Usuario
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(123, 157);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(412, 26);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "USUÁRIO";
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.TxtBox_Usuario.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.TxtBox_Usuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBox_Usuario.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtBox_Usuario.Location = new System.Drawing.Point(123, 157);
+            this.TxtBox_Usuario.Name = "TxtBox_Usuario";
+            this.TxtBox_Usuario.Size = new System.Drawing.Size(412, 26);
+            this.TxtBox_Usuario.TabIndex = 1;
+            this.TxtBox_Usuario.Text = "USUÁRIO";
+            this.TxtBox_Usuario.Enter += new System.EventHandler(this.TxtBoxUsuario_Enter);
+            this.TxtBox_Usuario.Leave += new System.EventHandler(this.TxtBox_Usuario_Leave);
             // 
-            // textBox2
+            // TxtBox_Senha
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(123, 250);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(412, 26);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "SENHA";
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.TxtBox_Senha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtBox_Senha.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtBox_Senha.Location = new System.Drawing.Point(123, 250);
+            this.TxtBox_Senha.Name = "TxtBox_Senha";
+            this.TxtBox_Senha.Size = new System.Drawing.Size(412, 26);
+            this.TxtBox_Senha.TabIndex = 2;
+            this.TxtBox_Senha.Text = "SENHA";
+            this.TxtBox_Senha.Enter += new System.EventHandler(this.TxtBox_Senha_Enter);
+            this.TxtBox_Senha.Leave += new System.EventHandler(this.TxtBox_Senha_Leave);
             // 
-            // button1
+            // Btn_Login
             // 
-            this.button1.Location = new System.Drawing.Point(123, 326);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(406, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_Login.Location = new System.Drawing.Point(123, 326);
+            this.Btn_Login.Name = "Btn_Login";
+            this.Btn_Login.Size = new System.Drawing.Size(406, 40);
+            this.Btn_Login.TabIndex = 3;
+            this.Btn_Login.Text = "LOGIN";
+            this.Btn_Login.UseVisualStyleBackColor = true;
+            this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
             // 
             // FrmLogin
             // 
@@ -74,9 +74,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Btn_Login);
+            this.Controls.Add(this.TxtBox_Senha);
+            this.Controls.Add(this.TxtBox_Usuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
             this.Opacity = 0.9D;
@@ -87,8 +87,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TxtBox_Usuario;
+        private System.Windows.Forms.TextBox TxtBox_Senha;
+        private System.Windows.Forms.Button Btn_Login;
     }
 }

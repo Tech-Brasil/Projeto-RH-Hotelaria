@@ -17,46 +17,47 @@ namespace Projeto_RH_HOTELARIA.Forms.Login
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
+        private void TxtBox_Usuario_Leave(object sender, EventArgs e)
         {
-            if(textBox1.Text == "USUARIO")
+            if (TxtBox_Usuario.Text == "")
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.LightGray;
+                TxtBox_Usuario.Text = "USUARIO";
+                TxtBox_Usuario.ForeColor = Color.LightGray;
+            }
+        }
+        private void TxtBoxUsuario_Enter(object sender, EventArgs e)
+        {
+            if (TxtBox_Usuario.Text == "USUARIO")
+            {
+                TxtBox_Usuario.Text = "";
+                TxtBox_Usuario.ForeColor = Color.LightGray;
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void TxtBox_Senha_Enter(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if (TxtBox_Senha.Text == "SENHA")
             {
-                textBox1.Text = "USUARIO";
-                textBox1.ForeColor = Color.LightGray;            }
-        }
-
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if(textBox2.Text == "SENHA")
-            {
-                textBox2.Text = "";
-                textBox2.ForeColor = Color.LightGray;
-                textBox2.UseSystemPasswordChar = true;
+                TxtBox_Senha.Text = "";
+                TxtBox_Senha.ForeColor = Color.LightGray;
+                TxtBox_Senha.UseSystemPasswordChar = true;
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void TxtBox_Senha_Leave(object sender, EventArgs e)
         {
-            if(textBox2.Text == "")
+            if (TxtBox_Senha.Text == "")
             {
-                textBox2.Text = "SENHA";
-                textBox2.ForeColor = Color.LightGray;
-                textBox2.UseSystemPasswordChar= false;
+                TxtBox_Senha.Text = "SENHA";
+                TxtBox_Senha.ForeColor = Color.LightGray;
+                TxtBox_Senha.UseSystemPasswordChar = false;
             }
+        }
+
+        private void Btn_Login_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -41,9 +41,6 @@ namespace Projeto_RH_HOTELARIA.Forms
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
