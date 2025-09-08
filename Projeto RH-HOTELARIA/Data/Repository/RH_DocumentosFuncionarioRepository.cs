@@ -84,17 +84,24 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
         public void Excluir(string rg)
         {
-            using (SqlConnection conn = new SqlConnection(_context))
+            try
             {
-                conn.Open();
+                using (SqlConnection conn = new SqlConnection(_context))
+                {
+                    conn.Open();
 
-                SqlCommand cmd = new SqlCommand("usp_RH_DocumentosFuncionario", conn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("usp_RH_DocumentosFuncionario", conn);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@acao", 3);
-                cmd.Parameters.AddWithValue("@RG", rg);
+                    cmd.Parameters.AddWithValue("@acao", 3);
+                    cmd.Parameters.AddWithValue("@RG", rg);
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Erro ao excluir documentos do funcionário: " + ex.Message);
             }
         }
 

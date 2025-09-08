@@ -66,18 +66,7 @@ namespace Projeto_RH_HOTELARIA.Utils
             return true;
 
         }
-        private static bool IsRepeatdSequence(string num)
-        {
-            return num.Distinct().Count() == 1;
-        }
-        private static bool IsSequencialNumero(string num)
-        {
-            var numero = num.Select(c => int.Parse(c.ToString())).ToArray();
 
-            var ascendente = numero.SequenceEqual(Enumerable.Range(numero[0], numero.Length));
-            var descendente = numero.SequenceEqual(Enumerable.Range(numero[0] - numero.Length + 1, numero.Length).Reverse());
-            return ascendente || descendente;
-        }
         public static bool RgValido(string rg)
         {
             rg = rg.Trim();
@@ -102,30 +91,21 @@ namespace Projeto_RH_HOTELARIA.Utils
             }
             return true;
         }
-        /*public static bool EstadoValido(string estado)
+
+        #region Metdodos Auxiliares
+        private static bool IsRepeatdSequence(string num)
         {
-            try
-            {
-
-            }
-            catch
-            {
-                return false;
-            }
+            return num.Distinct().Count() == 1;
         }
-        public static bool PaisValido(string pais)
+        private static bool IsSequencialNumero(string num)
         {
-            try
-            {
+            var numero = num.Select(c => int.Parse(c.ToString())).ToArray();
 
-            }
-            catch
-            {
-                return false;
-            }
+            var ascendente = numero.SequenceEqual(Enumerable.Range(numero[0], numero.Length));
+            var descendente = numero.SequenceEqual(Enumerable.Range(numero[0] - numero.Length + 1, numero.Length).Reverse());
+            return ascendente || descendente;
         }
-        */
-
+        #endregion
     }
 
 }   
