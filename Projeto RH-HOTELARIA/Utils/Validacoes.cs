@@ -9,17 +9,72 @@ namespace Projeto_RH_HOTELARIA.Utils
 {
     class Validacoes
     {
-        public static bool EmailValido(string email)
+        public static bool DataAdmissaoValida(DateTime admissao,  DateTime ? demissao)
         {
-            email = email.Trim();
-            if (string.IsNullOrEmpty(email) || email.Length > 200)
+            if(demissao.HasValue && admissao > demissao)
+            {
+                return false ;
+            }
+            return true;
+        }
+        public static bool ContratoAtivo(DateTime? demissao)
+        {
+            return !demissao.HasValue;
+        }
+        public static bool CpfValido(string cpf)
+        {
+            if (string.IsNullOrWhiteSpace(cpf)) 
+            { 
+                return false; 
+            }
+            cpf = cpf.Trim();
+            cpf = new string(cpf.Where(char.IsDigit).ToArray());        
+            if (cpf.Length != 11)
+            {
+                return false;
+            }
+            if (IsRepeatdSequence(cpf))
+            {
+                return false;
+            }
+            if (IsSequencialNumero(cpf))
+            {
+                return false;
+            }
+            int soma = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                soma += int.Parse(cpf[i].ToString()) * (10 - i);
+            }
+            int resto = soma % 11;
+            int digito1 = resto < 2 ? 0 : 11 - resto;
+            if (int.Parse(cpf[9].ToString()) != digito1)
+            {
+                return false;
+            }
+            soma = 0;
+            for(int i = 0; i < 10; i++)
+            {
+                soma += int.Parse(cpf[i].ToString()) * (11 - i);
+            }
+            resto = soma % 11;
+            int digito2 = resto < 2 ? 0 : 11 - resto;
+            if (int.Parse(cpf[10].ToString()) != digito2)
             {
                 return false;
             }
 
-            var mailAddress = new System.Net.Mail.MailAddress(email);
             return true;
         }
+        public static bool SalarioValido(decimal salario)
+        {
+            if (salario > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        
         public static bool SenhaValida(string senha)
         {
             if (senha.Length < 8 || string.IsNullOrWhiteSpace(senha))
@@ -92,7 +147,7 @@ namespace Projeto_RH_HOTELARIA.Utils
             return true;
         }
 
-        #region Metdodos Auxiliares
+        #region Metodos Auxiliares
         private static bool IsRepeatdSequence(string num)
         {
             return num.Distinct().Count() == 1;
