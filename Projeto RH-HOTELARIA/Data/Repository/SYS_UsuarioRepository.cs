@@ -17,14 +17,29 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
         }
 
+        public void teste()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_context))
+                {
+                    conn.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro de conexão: " + ex.Message);
+            }
+        }
+
         public void Inserir(SYS_Usuario usuario)
         {
             try
             {
-                using(SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-                    
+
                     SqlCommand cmd = new SqlCommand("usp_UserCRUD", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
