@@ -17,45 +17,12 @@ namespace Projeto_RH_HOTELARIA.Forms.Login
             InitializeComponent();
         }
 
-
-        private void TxtBox_Usuario_Leave(object sender, EventArgs e)
+        private void btn_Sair_Click(object sender, EventArgs e)
         {
-            if (TxtBox_Usuario.Text == "")
-            {
-                TxtBox_Usuario.Text = "USUARIO";
-                TxtBox_Usuario.ForeColor = Color.LightGray;
-            }
-        }
-        private void TxtBoxUsuario_Enter(object sender, EventArgs e)
-        {
-            if (TxtBox_Usuario.Text == "USUARIO")
-            {
-                TxtBox_Usuario.Text = "";
-                TxtBox_Usuario.ForeColor = Color.LightGray;
-            }
+            Close();
         }
 
-        private void TxtBox_Senha_Enter(object sender, EventArgs e)
-        {
-            if (TxtBox_Senha.Text == "SENHA")
-            {
-                TxtBox_Senha.Text = "";
-                TxtBox_Senha.ForeColor = Color.LightGray;
-                TxtBox_Senha.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void TxtBox_Senha_Leave(object sender, EventArgs e)
-        {
-            if (TxtBox_Senha.Text == "")
-            {
-                TxtBox_Senha.Text = "SENHA";
-                TxtBox_Senha.ForeColor = Color.LightGray;
-                TxtBox_Senha.UseSystemPasswordChar = false;
-            }
-        }
-
-        private void Btn_Login_Click(object sender, EventArgs e)
+        private void btn_Logar_Click(object sender, EventArgs e)
         {
 
         }

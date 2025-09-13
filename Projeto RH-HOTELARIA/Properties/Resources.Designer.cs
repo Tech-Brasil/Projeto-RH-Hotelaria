@@ -63,9 +63,49 @@ namespace Projeto_RH_HOTELARIA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_tela_2025_08_24_091329 {
+        internal static System.Drawing.Bitmap icon_DB32 {
             get {
-                object obj = ResourceManager.GetObject("Captura de tela 2025-08-24 091329", resourceCulture);
+                object obj = ResourceManager.GetObject("icon-DB32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_interface {
+            get {
+                object obj = ResourceManager.GetObject("icon-interface", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Logo {
+            get {
+                object obj = ResourceManager.GetObject("icon-Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons_sistema {
+            get {
+                object obj = ResourceManager.GetObject("icons-sistema", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconswelcome {
+            get {
+                object obj = ResourceManager.GetObject("iconswelcome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
