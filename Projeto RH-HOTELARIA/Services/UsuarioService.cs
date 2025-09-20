@@ -19,17 +19,16 @@ namespace Projeto_RH_HOTELARIA.Services
         /// <summary>
         /// Realiza login do usuário.
         /// </summary>
-        public bool ValidarUsuario(string login, string senha)
+        public SYS_Usuario Autenticar(string login, string senha)
         {
             var usuarioDB = _usuarioRep.BuscarPorLogin(login).FirstOrDefault();
-
-            if (usuarioDB == null) return false;
+            if (usuarioDB == null) return null;
 
             bool senhaCorreta = Criptografia.Verificar(senha, usuarioDB.Senha);
+            if (!senhaCorreta) return null;
 
-            if (!senhaCorreta) return false;
-
-            return true;
+            usuarioDB.Senha = null;
+            return usuarioDB;
         }
 
         /// <summary>

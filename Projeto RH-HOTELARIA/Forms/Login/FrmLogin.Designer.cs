@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pnl_Left = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lb_Logo = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtBox_User = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtBox_Senha = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_Logar = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Sair = new Guna.UI2.WinForms.Guna2Button();
+            this.txtBox_Senha = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBox_User = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnl_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -90,16 +89,6 @@
             this.guna2HtmlLabel2.TabIndex = 13;
             this.guna2HtmlLabel2.Text = "Nome da Empresa";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(235, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(110, 107);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // lb_Logo
             // 
             this.lb_Logo.BackColor = System.Drawing.Color.Transparent;
@@ -110,50 +99,6 @@
             this.lb_Logo.Size = new System.Drawing.Size(212, 32);
             this.lb_Logo.TabIndex = 11;
             this.lb_Logo.Text = "Nome da Empresa";
-            // 
-            // txtBox_User
-            // 
-            this.txtBox_User.Animated = true;
-            this.txtBox_User.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_User.DefaultText = "";
-            this.txtBox_User.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBox_User.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBox_User.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_User.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_User.FillColor = System.Drawing.Color.LightGray;
-            this.txtBox_User.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_User.Font = new System.Drawing.Font("Arial", 8F);
-            this.txtBox_User.ForeColor = System.Drawing.Color.Black;
-            this.txtBox_User.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_User.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtBox_User.IconLeft")));
-            this.txtBox_User.Location = new System.Drawing.Point(185, 218);
-            this.txtBox_User.Name = "txtBox_User";
-            this.txtBox_User.PlaceholderText = "";
-            this.txtBox_User.SelectedText = "";
-            this.txtBox_User.Size = new System.Drawing.Size(200, 21);
-            this.txtBox_User.TabIndex = 12;
-            // 
-            // txtBox_Senha
-            // 
-            this.txtBox_Senha.Animated = true;
-            this.txtBox_Senha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_Senha.DefaultText = "";
-            this.txtBox_Senha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBox_Senha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBox_Senha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_Senha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_Senha.FillColor = System.Drawing.Color.LightGray;
-            this.txtBox_Senha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_Senha.Font = new System.Drawing.Font("Arial", 8F);
-            this.txtBox_Senha.ForeColor = System.Drawing.Color.Black;
-            this.txtBox_Senha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_Senha.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtBox_Senha.IconLeft")));
-            this.txtBox_Senha.Location = new System.Drawing.Point(185, 282);
-            this.txtBox_Senha.Name = "txtBox_Senha";
-            this.txtBox_Senha.PlaceholderText = "";
-            this.txtBox_Senha.SelectedText = "";
-            this.txtBox_Senha.Size = new System.Drawing.Size(200, 21);
-            this.txtBox_Senha.TabIndex = 13;
             // 
             // btn_Logar
             // 
@@ -192,6 +137,60 @@
             this.btn_Sair.TabIndex = 15;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
+            // txtBox_Senha
+            // 
+            this.txtBox_Senha.Animated = true;
+            this.txtBox_Senha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_Senha.DefaultText = "";
+            this.txtBox_Senha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBox_Senha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBox_Senha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_Senha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_Senha.FillColor = System.Drawing.Color.LightGray;
+            this.txtBox_Senha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_Senha.Font = new System.Drawing.Font("Arial", 8F);
+            this.txtBox_Senha.ForeColor = System.Drawing.Color.Black;
+            this.txtBox_Senha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_Senha.IconLeft = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_senha;
+            this.txtBox_Senha.Location = new System.Drawing.Point(185, 282);
+            this.txtBox_Senha.Name = "txtBox_Senha";
+            this.txtBox_Senha.PlaceholderText = "";
+            this.txtBox_Senha.SelectedText = "";
+            this.txtBox_Senha.Size = new System.Drawing.Size(200, 21);
+            this.txtBox_Senha.TabIndex = 13;
+            // 
+            // txtBox_User
+            // 
+            this.txtBox_User.Animated = true;
+            this.txtBox_User.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBox_User.DefaultText = "";
+            this.txtBox_User.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBox_User.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBox_User.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_User.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBox_User.FillColor = System.Drawing.Color.LightGray;
+            this.txtBox_User.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_User.Font = new System.Drawing.Font("Arial", 8F);
+            this.txtBox_User.ForeColor = System.Drawing.Color.Black;
+            this.txtBox_User.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBox_User.IconLeft = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_User;
+            this.txtBox_User.Location = new System.Drawing.Point(185, 218);
+            this.txtBox_User.Name = "txtBox_User";
+            this.txtBox_User.PlaceholderText = "";
+            this.txtBox_User.SelectedText = "";
+            this.txtBox_User.Size = new System.Drawing.Size(200, 21);
+            this.txtBox_User.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(235, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(110, 107);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmLogin
             // 
