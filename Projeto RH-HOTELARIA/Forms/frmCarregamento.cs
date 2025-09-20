@@ -37,7 +37,6 @@ namespace Projeto_RH_HOTELARIA.Forms
                 switch (progrBar_Carregamento.Value)
                 {
                     case 2:
-                        teste.teste();
                         lb_Logo.Left = 80;
                         progrBar_Carregamento.ProgressColor = Color.Red;
                         progrBar_Carregamento.ProgressColor2 = Color.Red;
@@ -71,7 +70,7 @@ namespace Projeto_RH_HOTELARIA.Forms
                 timer1.Stop();
                 Login.FrmLogin login = new Login.FrmLogin();
                 login.Show();
-                this.Hide();
+                Hide();
             }
         }
 
