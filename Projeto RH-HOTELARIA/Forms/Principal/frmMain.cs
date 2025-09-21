@@ -19,5 +19,6 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal
             InitializeComponent();
             //_usuario = usuario; 
         }
+
     }
 }
