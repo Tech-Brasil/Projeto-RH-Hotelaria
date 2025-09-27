@@ -109,6 +109,30 @@
     <Compile Include="Forms\Principal\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioCadastrar.Designer.cs">
+      <DependentUpon>frmUsuarioCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioListar.Designer.cs">
+      <DependentUpon>frmUsuarioListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioPermissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioPermissoes.Designer.cs">
+      <DependentUpon>frmUsuarioPermissoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\RH\RH_DocumentoEndereco.cs" />
     <Compile Include="Models\RH\RH_DocumentosFuncionario.cs" />
     <Compile Include="Models\RH\RH_Endereco.cs" />
@@ -149,6 +173,12 @@
     <EmbeddedResource Include="Forms\Principal\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmUsuarioCadastrar.resx">
+      <DependentUpon>frmUsuarioCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -180,9 +210,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Principal\Auditoria\" />
-    <Folder Include="Forms\Principal\Endereco\" />
-    <Folder Include="Forms\Principal\Funcionario\" />
+    <None Include="Resources\icon-photo.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -210,6 +238,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-Fechar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

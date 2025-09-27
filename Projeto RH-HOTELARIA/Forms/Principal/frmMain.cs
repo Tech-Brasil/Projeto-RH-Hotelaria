@@ -1,4 +1,5 @@
-﻿using Projeto_RH_HOTELARIA.Models.SYS;
+﻿using Projeto_RH_HOTELARIA.Forms.Principal.Usuários;
+using Projeto_RH_HOTELARIA.Models.SYS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,5 +21,10 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal
             //_usuario = usuario; 
         }
 
+        private void gerenciarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuario user = new frmUsuario();
+            user.Show();
+        }
     }
 }

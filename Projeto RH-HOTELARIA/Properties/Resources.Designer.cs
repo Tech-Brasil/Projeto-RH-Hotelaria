@@ -63,9 +63,29 @@ namespace Projeto_RH_HOTELARIA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_buscar {
+            get {
+                object obj = ResourceManager.GetObject("icon-buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_DB32 {
             get {
                 object obj = ResourceManager.GetObject("icon-DB32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Fechar {
+            get {
+                object obj = ResourceManager.GetObject("icon-Fechar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +106,36 @@ namespace Projeto_RH_HOTELARIA.Properties {
         internal static System.Drawing.Bitmap icon_Logo {
             get {
                 object obj = ResourceManager.GetObject("icon-Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_ok {
+            get {
+                object obj = ResourceManager.GetObject("icon-ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_ok1 {
+            get {
+                object obj = ResourceManager.GetObject("icon-ok1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_photo {
+            get {
+                object obj = ResourceManager.GetObject("icon-photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
