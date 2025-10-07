@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnl_Conteudo = new System.Windows.Forms.Panel();
             this.btn_Cadastro = new System.Windows.Forms.Button();
+            this.pnl_Conteudo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,20 +45,10 @@
             this.panel1.Size = new System.Drawing.Size(97, 319);
             this.panel1.TabIndex = 0;
             // 
-            // pnl_Conteudo
-            // 
-            this.pnl_Conteudo.BackColor = System.Drawing.SystemColors.Menu;
-            this.pnl_Conteudo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Conteudo.Location = new System.Drawing.Point(97, 0);
-            this.pnl_Conteudo.Name = "pnl_Conteudo";
-            this.pnl_Conteudo.Size = new System.Drawing.Size(404, 319);
-            this.pnl_Conteudo.TabIndex = 1;
-            // 
             // btn_Cadastro
             // 
             this.btn_Cadastro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cadastro.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icons_sistema;
+            this.btn_Cadastro.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_CadastroUser;
             this.btn_Cadastro.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_Cadastro.Location = new System.Drawing.Point(5, 10);
             this.btn_Cadastro.Name = "btn_Cadastro";
@@ -68,6 +58,16 @@
             this.btn_Cadastro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Cadastro.UseVisualStyleBackColor = true;
             this.btn_Cadastro.Click += new System.EventHandler(this.btn_Cadastro_Click);
+            // 
+            // pnl_Conteudo
+            // 
+            this.pnl_Conteudo.BackColor = System.Drawing.SystemColors.Menu;
+            this.pnl_Conteudo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_Conteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Conteudo.Location = new System.Drawing.Point(97, 0);
+            this.pnl_Conteudo.Name = "pnl_Conteudo";
+            this.pnl_Conteudo.Size = new System.Drawing.Size(404, 319);
+            this.pnl_Conteudo.TabIndex = 1;
             // 
             // frmUsuario
             // 

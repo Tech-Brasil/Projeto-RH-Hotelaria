@@ -104,7 +104,7 @@ namespace Projeto_RH_HOTELARIA.Utils
             }
             return true;
         }
-        public static bool DataValida(DateTime dataInicial, DateTime dataFinal)
+        public static bool DataValida(DateTime dataInicial, DateTime? dataFinal)
         {
             if (dataInicial == DateTime.MinValue || dataFinal == DateTime.MinValue)
             {

@@ -73,6 +73,16 @@ namespace Projeto_RH_HOTELARIA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_CadastroUser {
+            get {
+                object obj = ResourceManager.GetObject("icon-CadastroUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_DB32 {
             get {
                 object obj = ResourceManager.GetObject("icon-DB32", resourceCulture);

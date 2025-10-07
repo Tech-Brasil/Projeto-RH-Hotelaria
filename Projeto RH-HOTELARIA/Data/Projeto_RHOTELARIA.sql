@@ -143,24 +143,11 @@ BEGIN
     END;
     ELSE IF (@acao = 4) -- SELECT (Read)
     BEGIN
-        IF @Id IS NULL AND @RG IS NULL AND @Login IS NULL
-			SELECT UsuarioId, RG, Login, Role, CriadoEm
-			FROM SYS_Usuario;
-
-		ELSE IF @Id IS NOT NULL
-			SELECT UsuarioId, RG, Login, Role, CriadoEm
-			FROM SYS_Usuario
-			WHERE UsuarioId = @Id;
-
-		ELSE IF @RG IS NOT NULL
-			SELECT UsuarioId, RG, Login, Role, CriadoEm
-			FROM SYS_Usuario
-			WHERE RG = @RG;
-
-		ELSE IF @Login IS NOT NULL
-			SELECT UsuarioId, RG, Login, Role, CriadoEm
-			FROM SYS_Usuario
-			WHERE Login = @Login;
+        SELECT UsuarioId, RG, Login, Role, CriadoEm
+		FROM SYS_Usuario
+		WHERE (@Id IS NULL OR UsuarioId = @Id)
+			AND (@RG IS NULL OR LTRIM(RTRIM(RG)) = LTRIM(RTRIM(@RG)))
+			AND (@Login IS NULL OR Login = @Login);
     END;
 END;
 GO
@@ -207,29 +194,12 @@ BEGIN
 
     ELSE IF (@acao = 4) -- SELECT (Read)
     BEGIN
-        IF @RG IS NULL AND @Nome IS NULL AND @DataNascimento IS NULL AND @DataAdmissao IS NULL
-            SELECT RG, Nome, DataNascimento, Cargo, Departamento, DataAdmissao, DataDemissao, Salario
-            FROM RH_Funcionario;
-
-        ELSE IF @RG IS NOT NULL
-            SELECT RG, Nome, DataNascimento, Cargo, Departamento, DataAdmissao, DataDemissao, Salario
-            FROM RH_Funcionario
-            WHERE RG = @RG;
-
-        ELSE IF @Nome IS NOT NULL
-            SELECT RG, Nome, DataNascimento, Cargo, Departamento, DataAdmissao, DataDemissao, Salario
-            FROM RH_Funcionario
-            WHERE Nome LIKE '%' + @Nome + '%';
-
-        ELSE IF @DataNascimento IS NOT NULL
-            SELECT RG, Nome, DataNascimento, Cargo, Departamento, DataAdmissao, DataDemissao, Salario
-            FROM RH_Funcionario
-            WHERE DataNascimento = @DataNascimento;
-
-        ELSE IF @DataAdmissao IS NOT NULL
-            SELECT RG, Nome, DataNascimento, Cargo, Departamento, DataAdmissao, DataDemissao, Salario
-            FROM RH_Funcionario
-            WHERE DataAdmissao = @DataAdmissao;
+		SELECT RG, Nome, DataNascimento, Cargo, Departamento, DataAdmissao, DataDemissao, Salario
+		FROM RH_Funcionario
+		WHERE (@RG IS NULL OR LTRIM(RTRIM(RG)) = LTRIM(RTRIM(@RG)))
+			AND (@Nome IS NULL OR Nome LIKE '%' + @Nome + '%')
+			AND (@DataNascimento IS NULL OR DataNascimento = @DataNascimento)
+			AND (@DataAdmissao IS NULL OR DataAdmissao = @DataAdmissao);
     END;
 END;
 GO
@@ -255,6 +225,7 @@ BEGIN
 		VALUES
 		(@RG, @CPF, @TituloEleitor, @CTPS_Numero, @CTPS_Serie, @CNH_Numero, @CNH_Categoria, @CNH_Validade, @Passaporte, @PIS, GETDATE())
 	END;
+
 	ELSE IF (@acao = 2) -- UPDATE
 	BEGIN
 		UPDATE RH_DocumentosFuncionario
@@ -270,26 +241,19 @@ BEGIN
 			PIS = @PIS
 		WHERE RG = @RG;
 	END;
+
 	ELSE IF (@acao = 3) -- DELETE
 	BEGIN
 		DELETE FROM RH_DocumentosFuncionario
 		WHERE RG = @RG;
 	END;
-	ELSE IF (@acao = 4) -- SELECT(READ)
+
+	ELSE IF (@acao = 4) -- SELECT (Read)
 	BEGIN
-		IF @RG IS NULL AND @CPF IS NULL
-			SELECT RG, CPF, TituloEleitor, CTPS_Numero, CTPS_Serie, CNH_Numero, CNH_Categoria, CNH_Validade, Passaporte, PIS, DataCriacao
-			FROM RH_DocumentosFuncionario;
-
-		ELSE IF @RG IS NOT NULL
-			SELECT RG, CPF, TituloEleitor, CTPS_Numero, CTPS_Serie, CNH_Numero, CNH_Categoria, CNH_Validade, Passaporte, PIS, DataCriacao
-			FROM RH_DocumentosFuncionario
-			WHERE RG = @RG;
-
-		ELSE IF @CPF IS NOT NULL
-			SELECT RG, CPF, TituloEleitor, CTPS_Numero, CTPS_Serie, CNH_Numero, CNH_Categoria, CNH_Validade, Passaporte, PIS, DataCriacao
-			FROM RH_DocumentosFuncionario
-			WHERE CPF = @CPF;
+		SELECT RG, CPF, TituloEleitor, CTPS_Numero, CTPS_Serie, CNH_Numero, CNH_Categoria, CNH_Validade, Passaporte, PIS, DataCriacao
+		FROM RH_DocumentosFuncionario
+		WHERE (@RG IS NULL OR LTRIM(RTRIM(RG)) = LTRIM(RTRIM(@RG)))
+			AND (@CPF IS NULL OR LTRIM(RTRIM(CPF)) = LTRIM(RTRIM(@CPF)));
 	END;
 END;
 GO
@@ -339,31 +303,13 @@ BEGIN
 
 	ELSE IF (@acao = 4) -- SELECT (Read)
 	BEGIN
-		
-		IF @CidadeNome IS NULL AND @EstadoSigla IS NULL AND @PaisSigla IS NULL 
-		AND @CEP IS NULL AND @Bairro IS NULL
-			SELECT CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
-			FROM RH_Endereco;
-		
-		ELSE IF @CidadeNome IS NOT NULL
-			SELECT CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
-			FROM RH_Endereco WHERE CidadeNome LIKE '%' + @CidadeNome + '%';
-
-		ELSE IF @EstadoSigla IS NOT NULL
-			SELECT CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
-			FROM RH_Endereco WHERE RTRIM(EstadoSigla) = @EstadoSigla;
-
-		ELSE IF @PaisSigla IS NOT NULL
-			SELECT CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
-			FROM RH_Endereco WHERE RTRIM(PaisSigla) = @PaisSigla;
-
-		ELSE IF @CEP IS NOT NULL
-			SELECT CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
-			FROM RH_Endereco WHERE RTRIM(CEP) = @CEP;
-
-		ELSE IF @Bairro  IS NOT NULL
-			SELECT CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
-			FROM RH_Endereco WHERE Bairro LIKE '%' + @Bairro + '%';
+		SELECT EnderecoId, CidadeNome, EstadoSigla, PaisSigla, Logradouro, Numero, Complemento, Bairro, CEP
+		FROM RH_Endereco
+		WHERE (@CidadeNome IS NULL OR CidadeNome LIKE '%' + @CidadeNome + '%')
+			AND (@EstadoSigla IS NULL OR RTRIM(PaisSigla) = @PaisSigla)
+			AND (@PaisSigla IS NULL OR RTRIM(PaisSigla) = @PaisSigla)
+			AND (@CEP IS NULL OR RTRIM(CEP) = @CEP)
+			AND (@Bairro IS NULL OR Bairro LIKE '%' + @Bairro + '%');
 	END;
 END;
 GO
@@ -397,21 +343,11 @@ BEGIN
 
 	ELSE IF (@acao = 4) -- SELECT (READ)
 	BEGIN
-		IF @RG IS NULL
-        BEGIN
-            -- Lista todos os vínculos
-            SELECT RG, EnderecoId
-            FROM RH_DocumentoEndereco;
-        END
-        ELSE
-        BEGIN
-            -- Lista todos os endereços de um funcionário específico
-            SELECT de.RG, e.EnderecoId, e.Logradouro, e.Numero, e.Bairro, e.CEP, e.CidadeNome
-            FROM RH_DocumentoEndereco de
-            INNER JOIN RH_Endereco e ON de.EnderecoId = e.EnderecoId
-            WHERE de.RG = @RG;
-        END
+		SELECT de.RG, e.EnderecoId, e.Logradouro, e.Numero, e.Bairro, e.CEP, e.CidadeNome
+		FROM RH_DocumentoEndereco de
+			INNER JOIN RH_Endereco e ON de.EnderecoId = e.EnderecoId
+		WHERE (@RG IS NULL OR de.RG = @RG)
+			AND (@EnderecoId IS NULL OR e.EnderecoId = @EnderecoId);
 	END;
-
 END;
 GO

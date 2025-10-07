@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,10 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             InitializeComponent();
         }
 
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            frmRG rg = new frmRG();
+            rg.ShowDialog();
+        }
     }
 }
