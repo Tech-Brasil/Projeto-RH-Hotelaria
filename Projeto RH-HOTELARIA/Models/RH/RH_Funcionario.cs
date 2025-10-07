@@ -10,7 +10,7 @@ namespace Projeto_RH_HOTELARIA.Models.RH
         public string Cargo { get; set; }
         public string Departamento { get; set; }
         public DateTime DataAdmissao { get; set; }
-        public DateTime DataDemissao { get; set; }
+        public DateTime? DataDemissao { get; set; }
         public decimal Salario { get; set; }
     }
 }

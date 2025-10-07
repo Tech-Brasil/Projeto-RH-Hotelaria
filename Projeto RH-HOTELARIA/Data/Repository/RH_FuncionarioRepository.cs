@@ -1,6 +1,7 @@
 ﻿using Projeto_RH_HOTELARIA.Data.IRepository;
 using Projeto_RH_HOTELARIA.Models.RH;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -100,49 +101,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             }
         }
 
-        public List<RH_Funcionario> BuscarPorRg(string rg)
-        {
-            try
-            {
-                List<RH_Funcionario> lista = new List<RH_Funcionario>();
-
-                using(SqlConnection conn = new SqlConnection(_context))
-                {
-                    conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_RH_FuncionarioCRUD", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@acao", 4);
-                    cmd.Parameters.AddWithValue("@RG", rg);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        RH_Funcionario funcionario = new RH_Funcionario
-                        {
-                            RG = reader.GetString(reader.GetOrdinal("RG")),
-                            Nome = reader.GetString(reader.GetOrdinal("Nome")),
-                            DataNascimento =  reader.GetDateTime(reader.GetOrdinal("DataNascimento")),
-                            Cargo = reader.GetString(reader.GetOrdinal("Cargo")),
-                            Departamento = reader.GetString(reader.GetOrdinal("Departamento")),
-                            DataAdmissao = reader.GetDateTime(reader.GetOrdinal("DataAdmissao")),
-                            DataDemissao = reader.GetDateTime(reader.GetOrdinal("DataDemissao")),
-                            Salario = reader.GetDecimal(reader.GetOrdinal("Salario"))
-                        };
-                        lista.Add(funcionario);
-                    }
-                }
-
-                return lista;
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception("Erro ao buscar funcionário por RG: " + ex.Message);
-            }
-        }
-
-        public List<RH_Funcionario> ListarTodos()
+        public List<RH_Funcionario> Buscar(string rg = null, string nome = null, DateTime? dataNascimento = null, DateTime? dataAdmissao = null)
         {
             try
             {
@@ -156,6 +115,10 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@acao", 4);
+                    cmd.Parameters.AddWithValue("@RG", (object)rg ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Nome", (object)nome ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@DataNascimento", (object)dataNascimento ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@DataAdmissao", (object)dataAdmissao ?? DBNull.Value);
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
@@ -168,7 +131,9 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                             Cargo = reader.GetString(reader.GetOrdinal("Cargo")),
                             Departamento = reader.GetString(reader.GetOrdinal("Departamento")),
                             DataAdmissao = reader.GetDateTime(reader.GetOrdinal("DataAdmissao")),
-                            DataDemissao = reader.GetDateTime(reader.GetOrdinal("DataDemissao")),
+                            DataDemissao = reader.IsDBNull(reader.GetOrdinal("DataDemissao"))
+                        ? (DateTime?)null
+                        : reader.GetDateTime(reader.GetOrdinal("DataDemissao")),
                             Salario = reader.GetDecimal(reader.GetOrdinal("Salario"))
                         };
                         lista.Add(funcionario);
@@ -179,7 +144,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             }
             catch (SqlException ex)
             {
-                throw new Exception("Erro ao listar funcionários: " + ex.Message);
+                throw new Exception("Erro ao buscar funcionários: " + ex.Message);
             }
         }
     }

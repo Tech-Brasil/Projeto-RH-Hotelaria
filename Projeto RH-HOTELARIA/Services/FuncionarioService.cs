@@ -73,22 +73,10 @@ namespace Projeto_RH_HOTELARIA.Services
         /// <summary>
         /// Obter o funcionário por RG.
         /// </summary>
-        public List<RH_Funcionario> ObterFuncPorRG(string rg)
+        public List<RH_Funcionario> Buscar(string rg)
         {
-            if (string.IsNullOrWhiteSpace(rg) || Validacoes.RgValido(rg))
-            {
-                throw new Exception("RG está errado ou RG inválido");
-            }
 
-            return _rH_Funcionario.BuscarPorRg(rg);
-        }
-
-        /// <summary>
-        /// Obter o funcionário.
-        /// </summary>
-        public List<RH_Funcionario> ObterFunc()
-        {
-            return _rH_Funcionario.ListarTodos();
+            return _rH_Funcionario.Buscar(rg);
         }
     }
 }
