@@ -21,10 +21,6 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal
             //_usuario = usuario; 
         }
 
-        private void gerenciarUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmUsuario user = new frmUsuario();
-            user.Show();
-        }
+
     }
 }
