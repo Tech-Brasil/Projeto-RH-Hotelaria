@@ -1,4 +1,4 @@
-﻿using Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca;
+﻿using Projeto_RH_HOTELARIA.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,17 +11,16 @@ using System.Windows.Forms;
 
 namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
 {
-    public partial class frmUsuarioCadastrar : Form
+    public partial class frmGerenciarContas : Form
     {
-        public frmUsuarioCadastrar()
+        public frmGerenciarContas()
         {
             InitializeComponent();
         }
 
-        private void btn_Buscar_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            frmRG rg = new frmRG();
-            rg.ShowDialog();
+
         }
     }
 }
