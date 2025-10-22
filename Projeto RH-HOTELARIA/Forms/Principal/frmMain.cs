@@ -21,6 +21,51 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal
             //_usuario = usuario; 
         }
 
+        private void btn_Usuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuariosSubmenu usuariosSubmenu = new frmUsuariosSubmenu();
+            AbrirForm(usuariosSubmenu);
+        }
 
+        #region Panel
+
+        private void AbrirForm(Form frm)
+        {
+            pnl_Submenu.Visible = true;
+            pnl_Submenu.Controls.Clear();
+
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            pnl_Submenu.Controls.Add(frm);
+            frm.Show();
+        }
+
+        public void AbrirFormNoPainel(Form formFilho)
+        {
+            pnl_Conteudo.Visible = true;
+            pnl_Conteudo.Controls.Clear();
+
+            formFilho.TopLevel = false;
+            formFilho.FormBorderStyle = FormBorderStyle.None;
+            formFilho.Dock = DockStyle.Fill;
+
+            pnl_Conteudo.Controls.Add(formFilho);
+            formFilho.Show();
+        }
+
+        public Panel PnlConteudo
+        {
+            get { return pnl_Conteudo; }
+        }
+
+        public void LimparPainel()
+        {
+            pnl_Conteudo.Controls.Clear();
+            pnl_Conteudo.Visible = false;
+        }
+
+        #endregion
     }
 }

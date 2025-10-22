@@ -109,29 +109,23 @@
     <Compile Include="Forms\Principal\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\frmUsuariosSubmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\frmUsuariosSubmenu.Designer.cs">
+      <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmRG.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmRG.Designer.cs">
       <DependentUpon>frmRG.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioCadastrar.cs">
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioCadastrar.Designer.cs">
-      <DependentUpon>frmUsuarioCadastrar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioListar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioListar.Designer.cs">
-      <DependentUpon>frmUsuarioListar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioPermissoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\frmUsuarioPermissoes.Designer.cs">
-      <DependentUpon>frmUsuarioPermissoes.cs</DependentUpon>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.Designer.cs">
+      <DependentUpon>frmGerenciarContas.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\RH\RH_DocumentoEndereco.cs" />
     <Compile Include="Models\RH\RH_DocumentosFuncionario.cs" />
@@ -163,6 +157,7 @@
     <Compile Include="Services\FuncionarioService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Utils\Criptografia.cs" />
+    <Compile Include="Utils\UIStyle.cs" />
     <Compile Include="Utils\Validacoes.cs" />
     <EmbeddedResource Include="Forms\frmCarregamento.resx">
       <DependentUpon>frmCarregamento.cs</DependentUpon>
@@ -173,11 +168,14 @@
     <EmbeddedResource Include="Forms\Principal\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\frmUsuariosSubmenu.resx">
+      <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmRG.resx">
       <DependentUpon>frmRG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmUsuarioCadastrar.resx">
-      <DependentUpon>frmUsuarioCadastrar.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.resx">
+      <DependentUpon>frmGerenciarContas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -256,6 +254,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-funcionário.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-endereço.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-relatório.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-subGerenciamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-subPermissao%28user%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-sublistar%28user%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-alterarSenha%28user%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-subOnOff%28user%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-CadastroUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cadastrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-editar%28User%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-delete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
