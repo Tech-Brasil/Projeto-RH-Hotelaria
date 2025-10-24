@@ -1,8 +1,0 @@
-﻿namespace Projeto_RH_HOTELARIA.Models.SYS
-{
-    public class SYS_Pais
-    {
-        public string Sigla { get; set; }
-        public string Nome { get; set; }
-    }
-}

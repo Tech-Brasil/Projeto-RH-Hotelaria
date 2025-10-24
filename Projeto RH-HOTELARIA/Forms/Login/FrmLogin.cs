@@ -1,7 +1,4 @@
-﻿using Projeto_RH_HOTELARIA.Data.IRepository;
-using Projeto_RH_HOTELARIA.Data.Repository;
-using Projeto_RH_HOTELARIA.Forms.Principal;
-using Projeto_RH_HOTELARIA.Services;
+﻿using Projeto_RH_HOTELARIA.Forms.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +13,6 @@ namespace Projeto_RH_HOTELARIA.Forms.Login
 {
     public partial class FrmLogin : Form
     {
-        UsuarioService user = new UsuarioService(new SYS_UsuarioRepository());
 
         public FrmLogin()
         {
