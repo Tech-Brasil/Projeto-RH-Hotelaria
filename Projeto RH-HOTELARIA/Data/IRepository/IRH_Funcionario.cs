@@ -1,6 +1,9 @@
 ﻿using Projeto_RH_HOTELARIA.Models.RH;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Projeto_RH_HOTELARIA.Data.IRepository
 {
@@ -8,9 +11,8 @@ namespace Projeto_RH_HOTELARIA.Data.IRepository
     {
         void Inserir(RH_Funcionario funcionario);
         void Alterar(RH_Funcionario funcionario);
-        void Excluir(string rg);
-
-        List<RH_Funcionario> Buscar(string rg = null, string nome = null,
-            DateTime? dataNascimento = null, DateTime? dataAdmissao = null);
+        void Excluir(int funcionarioId);
+        List<RH_Funcionario> BuscarPorNome(string nome);
+        List<RH_Funcionario> ListarTodos();
     }
 }

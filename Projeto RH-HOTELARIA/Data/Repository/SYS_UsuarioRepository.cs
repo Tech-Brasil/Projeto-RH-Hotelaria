@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Projeto_RH_HOTELARIA.Data.Repository
 {
@@ -17,20 +20,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
         }
 
-        public void teste()
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(_context))
-                {
-                    conn.Open();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro de conexão: " + ex.Message);
-            }
-        }
+        private object DbNull(object value) => value ?? DBNull.Value;
 
         public void Inserir(SYS_Usuario usuario)
         {
@@ -39,20 +29,23 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_UserCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@acao", 1);
-                    cmd.Parameters.AddWithValue("@RG", usuario.RG);
+                    cmd.Parameters.AddWithValue("@Acao", 1);
+                    cmd.Parameters.AddWithValue("@PessoaId", usuario.PessoaId);
                     cmd.Parameters.AddWithValue("@Login", usuario.Login);
-                    cmd.Parameters.AddWithValue("@SenhaHash", usuario.Senha);
+                    cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
                     cmd.Parameters.AddWithValue("@Role", usuario.Role);
+                    cmd.Parameters.AddWithValue("@Ativo", usuario.Ativo);
+                    cmd.Parameters.AddWithValue("@Foto", DbNull(usuario.Foto));
+
+                    cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao inserir usuário: " + ex.Message);
+                throw new Exception(sqlEx.Message);
             }
         }
 
@@ -63,82 +56,84 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_UserCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@acao", 2);
-                    cmd.Parameters.AddWithValue("@Id", usuario.ID);
-                    cmd.Parameters.AddWithValue("@RG", usuario.RG);
+                    cmd.Parameters.AddWithValue("@Acao", 2);
+                    cmd.Parameters.AddWithValue("@UsuarioId", usuario.UsuarioId);
+                    cmd.Parameters.AddWithValue("@PessoaId", usuario.PessoaId);
                     cmd.Parameters.AddWithValue("@Login", usuario.Login);
-                    cmd.Parameters.AddWithValue("@SenhaHash", usuario.Senha);
+                    cmd.Parameters.AddWithValue("@Senha", usuario.Senha);
                     cmd.Parameters.AddWithValue("@Role", usuario.Role);
+                    cmd.Parameters.AddWithValue("@Ativo", usuario.Ativo);
+                    cmd.Parameters.AddWithValue("@Foto", DbNull(usuario.Foto));
+
+                    cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao alterar usuário: " + ex.Message);
+                throw new Exception(sqlEx.Message);
             }
         }
 
-        public void Excluir(int id)
+        public SYS_Usuario BuscarPorLogin(string login)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
-                {
-                    conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_UserCRUD", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@acao", 3);
-                    cmd.Parameters.AddWithValue("@Id", id);
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception("Erro ao deletar usuário: " + ex.Message);
-            }
-        }
-
-        public List<SYS_Usuario> BuscarPorLogin(string login)
-        {
-            try
-            {
-                List<SYS_Usuario> usuarios = new List<SYS_Usuario>();
+                SYS_Usuario user = null;
 
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_UserCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@acao", 4);
+                    cmd.Parameters.AddWithValue("@Acao", 5);
                     cmd.Parameters.AddWithValue("@Login", login);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.Read())
                         {
-                            SYS_Usuario usuario = new SYS_Usuario
+                            user = new SYS_Usuario
                             {
-                                ID = reader.GetInt32(reader.GetOrdinal("Id")),
-                                RG = reader.GetString(reader.GetOrdinal("RG")),
-                                Login = reader.GetString(reader.GetOrdinal("Login")),
-                                Senha = reader.GetString(reader.GetOrdinal("SenhaHash")),
-                                Role = reader.GetString(reader.GetOrdinal("Role"))
+                                UsuarioId = (int)reader["UsuarioId"],
+                                PessoaId = (int)reader["PessoaId"],
+                                Login = reader["Login"].ToString(),
+                                Role = reader["Role"].ToString(),
+                                Senha = reader["Senha"].ToString(),
+                                Ativo = (bool)reader["Ativo"],
+                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             };
-                            usuarios.Add(usuario);
                         }
                     }
                 }
-                return usuarios;
+
+                return user;
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao listar usuários: " + ex.Message);
+                throw new Exception(sqlEx.Message);
+            }
+        }
+
+        public void Excluir(int usuarioId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(_context))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Acao", 3);
+                    cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception(sqlEx.Message);
             }
         }
 
@@ -146,37 +141,77 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                List<SYS_Usuario> usuarios = new List<SYS_Usuario>();
+                List<SYS_Usuario> lista = new List<SYS_Usuario>();
+
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_UserCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@acao", 4);
+                    cmd.Parameters.AddWithValue("@Acao", 4);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            SYS_Usuario usuario = new SYS_Usuario
+                            lista.Add(new SYS_Usuario
                             {
-                                ID = reader.GetInt32(reader.GetOrdinal("Id")),
-                                RG = reader.GetString(reader.GetOrdinal("RG")),
-                                Login = reader.GetString(reader.GetOrdinal("Login")),
-                                Senha = reader.GetString(reader.GetOrdinal("SenhaHash")),
-                                Role = reader.GetString(reader.GetOrdinal("Role"))
-                            };
-                            usuarios.Add(usuario);
+                                UsuarioId = (int)reader["UsuarioId"],
+                                PessoaId = (int)reader["PessoaId"],
+                                Login = reader["Login"].ToString(),
+                                Role = reader["Role"].ToString(),
+                                Ativo = (bool)reader["Ativo"],
+                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
+                            });
                         }
                     }
                 }
-                return usuarios;
+
+                return lista;
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao listar usuários: " + ex.Message);
+                throw new Exception(sqlEx.Message);
+            }
+        }
+
+        public SYS_Usuario BuscarPorId(int usuarioId)
+        {
+            try
+            {
+                SYS_Usuario user = null;
+
+                using (SqlConnection conn = new SqlConnection(_context))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Acao", 4);
+                    cmd.Parameters.AddWithValue("@UsuarioId", usuarioId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            user = new SYS_Usuario
+                            {
+                                UsuarioId = (int)reader["UsuarioId"],
+                                PessoaId = (int)reader["PessoaId"],
+                                Login = reader["Login"].ToString(),
+                                Role = reader["Role"].ToString(),
+                                Senha = reader["Senha"].ToString(),
+                                Ativo = (bool)reader["Ativo"],
+                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
+                            };
+                        }
+                    }
+                }
+
+                return user;
+            }
+            catch (SqlException sqlEx)
+            {
+                throw new Exception(sqlEx.Message);
             }
         }
     }

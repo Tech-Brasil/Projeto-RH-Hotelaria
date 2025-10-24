@@ -133,6 +133,9 @@
   <data name="iconswelcome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconswelcome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-funcionário" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-funcionário.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,7 +205,7 @@
   <data name="icon-config" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-BuscarUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-BuscarUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

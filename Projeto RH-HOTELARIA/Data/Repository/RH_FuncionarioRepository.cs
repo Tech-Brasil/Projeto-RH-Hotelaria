@@ -1,11 +1,13 @@
 ﻿using Projeto_RH_HOTELARIA.Data.IRepository;
 using Projeto_RH_HOTELARIA.Models.RH;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Projeto_RH_HOTELARIA.Data.Repository
 {
@@ -18,33 +20,33 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
         }
 
+        private object DbNull(object value) => value ?? DBNull.Value;
+
         public void Inserir(RH_Funcionario funcionario)
         {
             try
             {
-                using(SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_RH_FuncionarioCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@acao", 1);
-                    cmd.Parameters.AddWithValue("@RG", funcionario.RG);
-                    cmd.Parameters.AddWithValue("@Nome", funcionario.Nome);
-                    cmd.Parameters.AddWithValue("@DataNascimento", funcionario.DataNascimento);
+                    cmd.Parameters.AddWithValue("@Acao", 1);
+                    cmd.Parameters.AddWithValue("@PessoaId", funcionario.PessoaId);
                     cmd.Parameters.AddWithValue("@Cargo", funcionario.Cargo);
                     cmd.Parameters.AddWithValue("@Departamento", funcionario.Departamento);
                     cmd.Parameters.AddWithValue("@DataAdmissao", funcionario.DataAdmissao);
-                    cmd.Parameters.AddWithValue("@DataDemissao", funcionario.DataDemissao);
+                    cmd.Parameters.AddWithValue("@DataDemissao", DbNull(funcionario.DataDemissao));
                     cmd.Parameters.AddWithValue("@Salario", funcionario.Salario);
+                    cmd.Parameters.AddWithValue("@Foto", DbNull(funcionario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao inserir funcionário: " + ex.Message);
+                throw new Exception(sqlEx.Message);
             }
         }
 
@@ -55,53 +57,55 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_RH_FuncionarioCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@acao", 2);
-                    cmd.Parameters.AddWithValue("@RG", funcionario.RG);
-                    cmd.Parameters.AddWithValue("@Nome", funcionario.Nome);
-                    cmd.Parameters.AddWithValue("@DataNascimento", funcionario.DataNascimento);
+                    cmd.Parameters.AddWithValue("@Acao", 2);
+                    cmd.Parameters.AddWithValue("@FuncionarioId", funcionario.FuncionarioId);
+                    cmd.Parameters.AddWithValue("@PessoaId", funcionario.PessoaId);
                     cmd.Parameters.AddWithValue("@Cargo", funcionario.Cargo);
                     cmd.Parameters.AddWithValue("@Departamento", funcionario.Departamento);
                     cmd.Parameters.AddWithValue("@DataAdmissao", funcionario.DataAdmissao);
-                    cmd.Parameters.AddWithValue("@DataDemissao", funcionario.DataDemissao);
+                    cmd.Parameters.AddWithValue("@DataDemissao", DbNull(funcionario.DataDemissao));
                     cmd.Parameters.AddWithValue("@Salario", funcionario.Salario);
+                    cmd.Parameters.AddWithValue("@Foto", DbNull(funcionario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao alterar funcionário: " + ex.Message);
+                throw new Exception(sqlEx.Message);
             }
         }
 
-        public void Excluir(string rg)
+        public List<RH_Funcionario> BuscarPorNome(string nome)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Excluir(int funcionarioId)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_RH_FuncionarioCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@acao", 3);
-                    cmd.Parameters.AddWithValue("@RG", rg);
-
+                    cmd.Parameters.AddWithValue("@Acao", 3);
+                    cmd.Parameters.AddWithValue("@FuncionarioId", funcionarioId);
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao excluir funcionário: " + ex.Message);
+                throw new Exception(sqlEx.Message);
             }
         }
 
-        public List<RH_Funcionario> Buscar(string rg = null, string nome = null, DateTime? dataNascimento = null, DateTime? dataAdmissao = null)
+        public List<RH_Funcionario> ListarTodos()
         {
             try
             {
@@ -110,41 +114,34 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
-
-                    SqlCommand cmd = new SqlCommand("usp_RH_FuncionarioCRUD", conn);
+                    SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Acao", 4);
 
-                    cmd.Parameters.AddWithValue("@acao", 4);
-                    cmd.Parameters.AddWithValue("@RG", (object)rg ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Nome", (object)nome ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@DataNascimento", (object)dataNascimento ?? DBNull.Value);
-                    cmd.Parameters.AddWithValue("@DataAdmissao", (object)dataAdmissao ?? DBNull.Value);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        RH_Funcionario funcionario = new RH_Funcionario
+                        while (reader.Read())
                         {
-                            RG = reader.GetString(reader.GetOrdinal("RG")),
-                            Nome = reader.GetString(reader.GetOrdinal("Nome")),
-                            DataNascimento = reader.GetDateTime(reader.GetOrdinal("DataNascimento")),
-                            Cargo = reader.GetString(reader.GetOrdinal("Cargo")),
-                            Departamento = reader.GetString(reader.GetOrdinal("Departamento")),
-                            DataAdmissao = reader.GetDateTime(reader.GetOrdinal("DataAdmissao")),
-                            DataDemissao = reader.IsDBNull(reader.GetOrdinal("DataDemissao"))
-                        ? (DateTime?)null
-                        : reader.GetDateTime(reader.GetOrdinal("DataDemissao")),
-                            Salario = reader.GetDecimal(reader.GetOrdinal("Salario"))
-                        };
-                        lista.Add(funcionario);
+                            lista.Add(new RH_Funcionario
+                            {
+                                FuncionarioId = (int)reader["FuncionarioId"],
+                                PessoaId = (int)reader["PessoaId"],
+                                Cargo = reader["Cargo"].ToString(),
+                                Departamento = reader["Departamento"].ToString(),
+                                DataAdmissao = (DateTime)reader["DataAdmissao"],
+                                DataDemissao = reader["DataDemissao"] == DBNull.Value ? null : (DateTime?)reader["DataDemissao"],
+                                Salario = (decimal)reader["Salario"],
+                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
+                            });
+                        }
                     }
                 }
 
                 return lista;
             }
-            catch (SqlException ex)
+            catch (SqlException sqlEx)
             {
-                throw new Exception("Erro ao buscar funcionários: " + ex.Message);
+                throw new Exception(sqlEx.Message);
             }
         }
     }

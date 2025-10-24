@@ -1,6 +1,5 @@
 ﻿using Projeto_RH_HOTELARIA.Data.IRepository;
 using Projeto_RH_HOTELARIA.Data.Repository;
-using Projeto_RH_HOTELARIA.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca
 {
     public partial class frmRG : Form
     {
-        FuncionarioService _funService = new FuncionarioService(new RH_FuncionarioRepository());
+        
         public frmRG()
         {
             InitializeComponent();
@@ -28,22 +27,22 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca
                 string rg = string.IsNullOrWhiteSpace(txtBox_RG.Text) ? null : txtBox_RG.Text.Trim();
                 string nome = string.IsNullOrWhiteSpace(txtBox_CPF.Text) ? null : txtBox_CPF.Text.Trim();
 
-                var resultado = _funService.Buscar(rg);
+                
 
                 dgv_Resultado.Rows.Clear();
-                foreach (var func in resultado)
-                {
-                    dgv_Resultado.Rows.Add(
-                        func.RG,
-                        func.Nome,
-                        func.DataNascimento.ToShortDateString(),
-                        func.Cargo,
-                        func.Departamento,
-                        func.DataAdmissao.ToShortDateString(),
-                        func.DataDemissao?.ToShortDateString() ?? "Ativo",
-                        func.Salario.ToString("C2")
-                    );
-                }
+                //foreach (var func in resultado)
+                //{
+                //    dgv_Resultado.Rows.Add(
+                //        func.RG,
+                //        func.Nome,
+                //        func.DataNascimento.ToShortDateString(),
+                //        func.Cargo,
+                //        func.Departamento,
+                //        func.DataAdmissao.ToShortDateString(),
+                //        func.DataDemissao?.ToShortDateString() ?? "Ativo",
+                //        func.Salario.ToString("C2")
+                //    );
+                //}
 
                 tab_RG.SelectedTab = page_Resultado;
             }

@@ -7,13 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_RH_HOTELARIA.Data.Repository;
 
 namespace Projeto_RH_HOTELARIA.Forms
 {
     public partial class frmCarregamento : Form
     {
-        SYS_UsuarioRepository teste = new SYS_UsuarioRepository();
 
         public frmCarregamento()
         {
