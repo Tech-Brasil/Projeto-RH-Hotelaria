@@ -1,4 +1,5 @@
-﻿using Projeto_RH_HOTELARIA.Utils;
+﻿using Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca;
+using Projeto_RH_HOTELARIA.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,15 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void rdb_Ativo_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Fbuscar_Click(object sender, EventArgs e)
+        {
+            frmBuscarFunc func = new frmBuscarFunc();
+            func.ShowDialog();
         }
     }
 }

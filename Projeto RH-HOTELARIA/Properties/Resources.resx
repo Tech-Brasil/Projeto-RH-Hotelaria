@@ -139,8 +139,8 @@
   <data name="icon-funcionário" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-funcionário.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-subGerenciamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-subGerenciamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-BuscarUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-BuscarUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-interface" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-interface.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +172,9 @@
   <data name="icon-ajuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-ajuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,14 +193,17 @@
   <data name="icon-Fechar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-Fechar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-photo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon-User1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-User1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_cadastrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_cadastrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-subGerenciamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-subGerenciamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-home1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +211,7 @@
   <data name="icon-config" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-BuscarUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon-BuscarUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-BuscarFunc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-BuscarFunc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

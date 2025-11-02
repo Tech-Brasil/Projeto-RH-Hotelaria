@@ -112,6 +112,12 @@
     <Compile Include="Forms\Principal\Usuários\frmUsuariosSubmenu.Designer.cs">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.Designer.cs">
+      <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmRG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\RH_FuncionarioService.cs" />
+    <Compile Include="Services\RH_PessoaService.cs" />
+    <Compile Include="Services\SYS_UsuarioService.cs" />
     <Compile Include="Utils\Criptografia.cs" />
     <Compile Include="Utils\UIStyle.cs" />
     <Compile Include="Utils\Validacoes.cs" />
@@ -160,6 +169,9 @@
     <EmbeddedResource Include="Forms\Principal\Usuários\frmUsuariosSubmenu.resx">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.resx">
+      <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmRG.resx">
       <DependentUpon>frmRG.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +183,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Projeto_RHotelariaDataSet.xsc">
       <DependentUpon>Projeto_RHotelariaDataSet.xsd</DependentUpon>
@@ -290,7 +303,13 @@
     <None Include="Resources\icon-BuscarUser.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <None Include="Resources\icon-Buscar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-BuscarFunc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
