@@ -93,6 +93,16 @@ namespace Projeto_RH_HOTELARIA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_BuscarFunc {
+            get {
+                object obj = ResourceManager.GetObject("icon-BuscarFunc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_BuscarUser {
             get {
                 object obj = ResourceManager.GetObject("icon-BuscarUser", resourceCulture);
@@ -246,6 +256,16 @@ namespace Projeto_RH_HOTELARIA.Properties {
         internal static System.Drawing.Bitmap icon_ok1 {
             get {
                 object obj = ResourceManager.GetObject("icon-ok1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_photo {
+            get {
+                object obj = ResourceManager.GetObject("icon-photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -354,3 +354,32 @@ BEGIN
 END;
 GO
 
+CREATE TRIGGER trg_Auditoria_SYS_Usuario
+ON SYS_Usuario
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	DECLARE @Acao NVARCHAR(50);
+	DECLARE @Tabela NVARCHAR(100) = 'SYS_Usuario';
+	DECLARE @UsuarioId INT;
+	DECLARE @ChaveRegistro NVARCHAR(100);
+
+	IF EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted)
+		SET @Acao = 'UPDATE';
+	ELSE IF EXISTS (SELECT* FROM inserted)
+		SET @Acao = 'INSERT';
+	ELSE
+		SET @Acao = 'DELETE';
+
+	SELECT TOP 1 @ChaveRegistro = CONVERT(NVARCHAR(100), ISNULL(i.UsuarioId, d.UsuarioId))
+	FROM inserted i
+	FULL JOIN deleted d ON 1=1;
+
+	SET @UsuarioId = NULL;
+
+	INSERT INTO SYS_Auditoria (UsuarioId, Acao, TabelaAfetada, ChaveRegistro)
+	VALUES (@UsuarioId, @Acao, @Tabela, @ChaveRegistro);
+END;
+GO

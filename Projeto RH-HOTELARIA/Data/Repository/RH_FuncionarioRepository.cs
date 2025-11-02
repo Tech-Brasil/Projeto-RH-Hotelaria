@@ -79,11 +79,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             }
         }
 
-        public List<RH_Funcionario> BuscarPorNome(string nome)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Excluir(int funcionarioId)
         {
             try
@@ -144,5 +139,48 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                 throw new Exception(sqlEx.Message);
             }
         }
+
+        public RH_Funcionario BuscarPorId(int funcionarioId)
+        {
+            try
+            {
+                RH_Funcionario func = null;
+
+                using (SqlConnection conn = new SqlConnection(_context))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Acao", 4);
+                    cmd.Parameters.AddWithValue("@FuncionarioId", funcionarioId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            func = new RH_Funcionario
+                            {
+                                FuncionarioId = (int)reader["FuncionarioId"],
+                                PessoaId = (int)reader["PessoaId"],
+                                Cargo = reader["Cargo"].ToString(),
+                                Departamento = reader["Departamento"].ToString(),
+                                DataAdmissao = (DateTime)reader["DataAdmissao"],
+                                DataDemissao = reader["DataDemissao"] == DBNull.Value ? null : (DateTime?)reader["DataDemissao"],
+                                Salario = (decimal)reader["Salario"],
+                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
+                            };
+                        }
+                    }
+                }
+
+                return func;
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
+

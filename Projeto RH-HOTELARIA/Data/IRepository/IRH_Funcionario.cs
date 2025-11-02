@@ -12,7 +12,7 @@ namespace Projeto_RH_HOTELARIA.Data.IRepository
         void Inserir(RH_Funcionario funcionario);
         void Alterar(RH_Funcionario funcionario);
         void Excluir(int funcionarioId);
-        List<RH_Funcionario> BuscarPorNome(string nome);
+        RH_Funcionario BuscarPorId(int funcionarioId);
         List<RH_Funcionario> ListarTodos();
     }
 }
