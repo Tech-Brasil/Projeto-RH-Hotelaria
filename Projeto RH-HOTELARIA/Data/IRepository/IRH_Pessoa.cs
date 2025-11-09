@@ -11,8 +11,8 @@ namespace Projeto_RH_HOTELARIA.Data.IRepository
     {
         void Inserir(RH_Pessoa pessoa);
         void Alterar(RH_Pessoa pessoa);
-        void Excluir(int pessoaId);
-        RH_Pessoa BuscarPorId(int pessoaId);
+        void Excluir(string nome);
+        RH_Pessoa BuscarPorNome(string nome);
         List<RH_Pessoa> ListarTodos();
     }
 }

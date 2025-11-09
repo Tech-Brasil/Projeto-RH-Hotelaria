@@ -33,20 +33,21 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@Acao", 1);
-                    cmd.Parameters.AddWithValue("@PessoaId", funcionario.PessoaId);
+                    cmd.Parameters.AddWithValue("@PessoaNome", funcionario.PessoaNome);
                     cmd.Parameters.AddWithValue("@Cargo", funcionario.Cargo);
                     cmd.Parameters.AddWithValue("@Departamento", funcionario.Departamento);
                     cmd.Parameters.AddWithValue("@DataAdmissao", funcionario.DataAdmissao);
                     cmd.Parameters.AddWithValue("@DataDemissao", DbNull(funcionario.DataDemissao));
                     cmd.Parameters.AddWithValue("@Salario", funcionario.Salario);
+                    cmd.Parameters.AddWithValue("@Ativo", funcionario.Ativo);
                     cmd.Parameters.AddWithValue("@Foto", DbNull(funcionario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException sqlEx)
+            catch (SqlException ex)
             {
-                throw new Exception(sqlEx.Message);
+                throw new Exception("Erro ao inserir funcionário: " + ex.Message);
             }
         }
 
@@ -62,20 +63,21 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
                     cmd.Parameters.AddWithValue("@Acao", 2);
                     cmd.Parameters.AddWithValue("@FuncionarioId", funcionario.FuncionarioId);
-                    cmd.Parameters.AddWithValue("@PessoaId", funcionario.PessoaId);
+                    cmd.Parameters.AddWithValue("@PessoaNome", funcionario.PessoaNome);
                     cmd.Parameters.AddWithValue("@Cargo", funcionario.Cargo);
                     cmd.Parameters.AddWithValue("@Departamento", funcionario.Departamento);
                     cmd.Parameters.AddWithValue("@DataAdmissao", funcionario.DataAdmissao);
                     cmd.Parameters.AddWithValue("@DataDemissao", DbNull(funcionario.DataDemissao));
                     cmd.Parameters.AddWithValue("@Salario", funcionario.Salario);
+                    cmd.Parameters.AddWithValue("@Ativo", funcionario.Ativo);
                     cmd.Parameters.AddWithValue("@Foto", DbNull(funcionario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException sqlEx)
+            catch (SqlException ex)
             {
-                throw new Exception(sqlEx.Message);
+                throw new Exception("Erro ao alterar funcionário: " + ex.Message);
             }
         }
 
@@ -94,18 +96,18 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch (SqlException sqlEx)
+            catch (SqlException ex)
             {
-                throw new Exception(sqlEx.Message);
+                throw new Exception("Erro ao excluir funcionário: " + ex.Message);
             }
         }
 
         public List<RH_Funcionario> ListarTodos()
         {
+            List<RH_Funcionario> lista = new List<RH_Funcionario>();
+
             try
             {
-                List<RH_Funcionario> lista = new List<RH_Funcionario>();
-
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
@@ -120,32 +122,33 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                             lista.Add(new RH_Funcionario
                             {
                                 FuncionarioId = (int)reader["FuncionarioId"],
-                                PessoaId = (int)reader["PessoaId"],
+                                PessoaNome = reader["PessoaNome"].ToString(),
                                 Cargo = reader["Cargo"].ToString(),
                                 Departamento = reader["Departamento"].ToString(),
                                 DataAdmissao = (DateTime)reader["DataAdmissao"],
                                 DataDemissao = reader["DataDemissao"] == DBNull.Value ? null : (DateTime?)reader["DataDemissao"],
                                 Salario = (decimal)reader["Salario"],
+                                Ativo = (bool)reader["Ativo"],
                                 Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             });
                         }
                     }
                 }
-
-                return lista;
             }
-            catch (SqlException sqlEx)
+            catch (SqlException ex)
             {
-                throw new Exception(sqlEx.Message);
+                throw new Exception("Erro ao listar funcionários: " + ex.Message);
             }
+
+            return lista;
         }
 
         public RH_Funcionario BuscarPorId(int funcionarioId)
         {
+            RH_Funcionario func = null;
+
             try
             {
-                RH_Funcionario func = null;
-
                 using (SqlConnection conn = new SqlConnection(_context))
                 {
                     conn.Open();
@@ -161,25 +164,25 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                             func = new RH_Funcionario
                             {
                                 FuncionarioId = (int)reader["FuncionarioId"],
-                                PessoaId = (int)reader["PessoaId"],
+                                PessoaNome = reader["PessoaNome"].ToString(),
                                 Cargo = reader["Cargo"].ToString(),
                                 Departamento = reader["Departamento"].ToString(),
                                 DataAdmissao = (DateTime)reader["DataAdmissao"],
                                 DataDemissao = reader["DataDemissao"] == DBNull.Value ? null : (DateTime?)reader["DataDemissao"],
                                 Salario = (decimal)reader["Salario"],
+                                Ativo = (bool)reader["Ativo"],
                                 Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             };
                         }
                     }
                 }
-
-                return func;
-
             }
             catch (SqlException ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Erro ao buscar funcionário: " + ex.Message);
             }
+
+            return func;
         }
     }
 }

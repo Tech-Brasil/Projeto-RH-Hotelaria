@@ -10,60 +10,57 @@ namespace Projeto_RH_HOTELARIA.Services
 {
     public class RH_PessoaService
     {
-        private readonly IRH_Pessoa _PessoaRepository;
+        private readonly IRH_Pessoa _repository;
 
-        public RH_PessoaService(IRH_Pessoa pessoaRepository)
+        public RH_PessoaService(IRH_Pessoa repository)
         {
-            _PessoaRepository = pessoaRepository;
+            _repository = repository;
         }
 
         public void Inserir(RH_Pessoa pessoa)
         {
             if (pessoa == null)
-                throw new ArgumentNullException(nameof(pessoa), "Pessoa não pode ser nula.");
+                throw new ArgumentNullException(nameof(pessoa));
 
             if (string.IsNullOrWhiteSpace(pessoa.Nome))
-                throw new ArgumentException("O nome é obrigatório.");
+                throw new ArgumentException("O nome é obrigatório e serve como identificador único.");
 
             if (pessoa.DataNascimento == default)
                 throw new ArgumentException("A data de nascimento é obrigatória.");
 
-            _PessoaRepository.Inserir(pessoa);
+            _repository.Inserir(pessoa);
         }
 
-        public void Atualizar(RH_Pessoa pessoa)
+        public void Alterar(RH_Pessoa pessoa)
         {
             if (pessoa == null)
-                throw new ArgumentNullException(nameof(pessoa), "Pessoa não pode ser nula.");
-
-            if (pessoa.PessoaId <= 0)
-                throw new ArgumentException("O ID da pessoa é inválido.");
+                throw new ArgumentNullException(nameof(pessoa));
 
             if (string.IsNullOrWhiteSpace(pessoa.Nome))
-                throw new ArgumentException("O nome é obrigatório.");
+                throw new ArgumentException("O nome é obrigatório para atualização.");
 
-            _PessoaRepository.Alterar(pessoa);
+            _repository.Alterar(pessoa);
         }
 
-        public void Excluir(int pessoaId)
+        public void Excluir(string nome)
         {
-            if (pessoaId <= 0)
-                throw new ArgumentException("ID inválido para exclusão.");
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new ArgumentException("O nome é obrigatório para exclusão.");
 
-            _PessoaRepository.Excluir(pessoaId);
+            _repository.Excluir(nome);
         }
 
-        public RH_Pessoa BuscarPorId(int pessoaId)
+        public RH_Pessoa BuscarPorNome(string nome)
         {
-            if (pessoaId <= 0)
-                throw new ArgumentException("ID inválido.");
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new ArgumentException("O nome é obrigatório para busca.");
 
-            return _PessoaRepository.BuscarPorId(pessoaId);
+            return _repository.BuscarPorNome(nome);
         }
 
         public List<RH_Pessoa> ListarTodos()
         {
-            return _PessoaRepository.ListarTodos();
+            return _repository.ListarTodos();
         }
     }
 }

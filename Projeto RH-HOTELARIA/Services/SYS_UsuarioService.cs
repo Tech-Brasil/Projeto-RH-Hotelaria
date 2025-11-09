@@ -21,24 +21,24 @@ namespace Projeto_RH_HOTELARIA.Services
         public void Inserir(SYS_Usuario usuario)
         {
             if (usuario == null)
-                throw new ArgumentNullException(nameof(usuario), "Usuário não pode ser nulo.");
+                throw new ArgumentNullException(nameof(usuario));
+
+            if (string.IsNullOrWhiteSpace(usuario.RG))
+                throw new ArgumentException("O RG é obrigatório.");
 
             if (string.IsNullOrWhiteSpace(usuario.Login))
                 throw new ArgumentException("O login é obrigatório.");
 
-            if (string.IsNullOrWhiteSpace(usuario.Senha))
+            if (string.IsNullOrWhiteSpace(usuario.SenhaHash))
                 throw new ArgumentException("A senha é obrigatória.");
 
             _repository.Inserir(usuario);
         }
 
-        public void Atualizar(SYS_Usuario usuario)
+        public void Alterar(SYS_Usuario usuario)
         {
-            if (usuario == null)
-                throw new ArgumentNullException(nameof(usuario));
-
             if (usuario.UsuarioId <= 0)
-                throw new ArgumentException("O ID do usuário é inválido.");
+                throw new ArgumentException("O ID do usuário é obrigatório.");
 
             _repository.Alterar(usuario);
         }
@@ -46,7 +46,7 @@ namespace Projeto_RH_HOTELARIA.Services
         public void Excluir(int usuarioId)
         {
             if (usuarioId <= 0)
-                throw new ArgumentException("ID inválido para exclusão.");
+                throw new ArgumentException("O ID do usuário é obrigatório para exclusão.");
 
             _repository.Excluir(usuarioId);
         }
@@ -56,20 +56,17 @@ namespace Projeto_RH_HOTELARIA.Services
             return _repository.BuscarPorId(usuarioId);
         }
 
+        public SYS_Usuario BuscarPorLogin(string login)
+        {
+            if (string.IsNullOrWhiteSpace(login))
+                throw new ArgumentException("O login é obrigatório.");
+
+            return _repository.BuscarPorLogin(login);
+        }
+
         public IEnumerable<SYS_Usuario> ListarTodos()
         {
             return _repository.ListarTodos();
-        }
-
-        public void AtivarOuDesativar(int usuarioId, bool ativo)
-        {
-            var usuario = _repository.BuscarPorId(usuarioId);
-
-            if (usuario == null)
-                throw new Exception("Usuário não encontrado.");
-
-            usuario.Ativo = ativo;
-            _repository.Alterar(usuario);
         }
 
     }

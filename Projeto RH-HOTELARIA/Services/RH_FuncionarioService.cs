@@ -10,23 +10,20 @@ namespace Projeto_RH_HOTELARIA.Services
 {
     public class RH_FuncionarioService
     {
-        private readonly IRH_Funcionario _funcionarioRepo;
+        private readonly IRH_Funcionario _repository;
 
-        public RH_FuncionarioService(IRH_Funcionario funcionarioRepo)
+        public RH_FuncionarioService(IRH_Funcionario repository)
         {
-            _funcionarioRepo = funcionarioRepo;
+            _repository = repository;
         }
 
         public void Inserir(RH_Funcionario funcionario)
         {
             if (funcionario == null)
-                throw new ArgumentNullException(nameof(funcionario), "O funcionário não pode ser nulo.");
+                throw new ArgumentNullException(nameof(funcionario));
 
-            if (funcionario.PessoaId <= 0)
-                throw new ArgumentException("PessoaId é obrigatório e deve ser válido.");
-
-            if (string.IsNullOrWhiteSpace(funcionario.Nome))
-                throw new ArgumentException("O nome é obrigatório.");
+            if (string.IsNullOrWhiteSpace(funcionario.PessoaNome))
+                throw new ArgumentException("O nome da pessoa é obrigatório.");
 
             if (string.IsNullOrWhiteSpace(funcionario.Cargo))
                 throw new ArgumentException("O cargo é obrigatório.");
@@ -37,21 +34,15 @@ namespace Projeto_RH_HOTELARIA.Services
             if (funcionario.Salario <= 0)
                 throw new ArgumentException("O salário deve ser maior que zero.");
 
-            if (funcionario.DataAdmissao == DateTime.MinValue)
-                throw new ArgumentException("A data de admissão é obrigatória.");
-
-            _funcionarioRepo.Inserir(funcionario);
+            _repository.Inserir(funcionario);
         }
 
-        public void Atualizar(RH_Funcionario funcionario)
+        public void Alterar(RH_Funcionario funcionario)
         {
-            if (funcionario == null)
-                throw new ArgumentNullException(nameof(funcionario), "O funcionário não pode ser nulo.");
-
             if (funcionario.FuncionarioId <= 0)
                 throw new ArgumentException("O ID do funcionário é obrigatório para atualização.");
 
-            _funcionarioRepo.Alterar(funcionario);
+            _repository.Alterar(funcionario);
         }
 
         public void Excluir(int funcionarioId)
@@ -59,7 +50,7 @@ namespace Projeto_RH_HOTELARIA.Services
             if (funcionarioId <= 0)
                 throw new ArgumentException("O ID do funcionário é obrigatório para exclusão.");
 
-            _funcionarioRepo.Excluir(funcionarioId);
+            _repository.Excluir(funcionarioId);
         }
 
         public RH_Funcionario BuscarPorId(int funcionarioId)
@@ -67,30 +58,12 @@ namespace Projeto_RH_HOTELARIA.Services
             if (funcionarioId <= 0)
                 throw new ArgumentException("O ID do funcionário é obrigatório para busca.");
 
-            var funcionario = _funcionarioRepo.BuscarPorId(funcionarioId);
-
-            if (funcionario == null)
-                throw new Exception("Funcionário não encontrado.");
-
-            return funcionario;
+            return _repository.BuscarPorId(funcionarioId);
         }
 
-        public IEnumerable<RH_Funcionario> ListarTodos()
+        public List<RH_Funcionario> ListarTodos()
         {
-            var lista = _funcionarioRepo.ListarTodos();
-
-            if (lista == null || lista.Count == 0)
-                throw new Exception("Nenhum funcionário encontrado.");
-
-            return lista;
+            return _repository.ListarTodos();
         }
-
-        //public void AtivarOuDesativar(int funcionarioId, bool ativo)
-        //{
-        //    if (funcionarioId <= 0)
-        //        throw new ArgumentException("O ID do funcionário é obrigatório.");
-
-        //    _funcionarioRepo.(funcionarioId, ativo);
-        //}
     }
 }

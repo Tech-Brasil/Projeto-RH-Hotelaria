@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,9 @@ namespace Projeto_RH_HOTELARIA.Models.RH
 {
     public class RH_DocumentosPessoa
     {
-        public int DocumentoId { get; set; }
-        public int PessoaId { get; set; }
+        [Key]
         public string RG { get; set; }
+        public string PessoaNome { get; set; }
         public string CPF { get; set; }
         public string TituloEleitor { get; set; }
         public string CTPS_Numero { get; set; }
@@ -19,5 +20,6 @@ namespace Projeto_RH_HOTELARIA.Models.RH
         public string CNH_Categoria { get; set; }
         public DateTime? CNH_Validade { get; set; }
         public string PIS { get; set; }
+        public DateTime DataEmissao { get; set; }
     }
 }
