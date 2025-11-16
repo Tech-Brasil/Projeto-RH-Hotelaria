@@ -34,5 +34,6 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários
             var mainForm = (frmMain)Application.OpenForms["frmMain"];
             mainForm.AbrirFormNoPainel(frmGerenciar);
         }
+
     }
 }

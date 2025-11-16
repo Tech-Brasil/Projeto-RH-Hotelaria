@@ -16,31 +16,31 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             InitializeComponent();
         }
 
-        private void btn_Fbuscar_Click(object sender, EventArgs e)
+        private void frmGerenciarContas_Load(object sender, EventArgs e)
         {
-            using (var func = new frmBuscarFunc())
+            UIStyle.ArredondarPanel(pnl_Top, 25);
+            UIStyle.ArredondarPanel(pnl_Conteudo, 25);
+            UIStyle.ArredondarPanel(pnl_Login, 15);
+            UIStyle.ArredondarPanel(pnl_Foto, 30);
+            UIStyle.ArredondarPanel(pnl_DocPessoal, 15);
+            UIStyle.ArredondarPanel(pnl_Pessoa, 15);
+        }
+
+
+        private void btn_buscarRG(object sender, EventArgs e)
+        {
+            using (var rg = new frmBuscarRG())
             {
-                if (func.ShowDialog() == DialogResult.OK)
+                if (rg.ShowDialog() == DialogResult.OK)
                 {
-                    if(func.Tag is RH_Funcionario funcionario)
+                    var doc = rg.Tag as RH_DocumentosPessoa;
+                    if (doc != null)
                     {
-
-                        txtBox_Fnome.Text = funcionario.PessoaNome;
-                        txtBox_Fcargo.Text = funcionario.Cargo;
-                        txtBox_Fdepartamento.Text = funcionario.Departamento;
-                        dateTime_FdataAdmissao.Text = funcionario.DataAdmissao.ToShortDateString();
-                        dateTime_FDemi.Text = funcionario.DataDemissao?.ToShortDateString() ?? "";
-
-                        if (funcionario.Foto != null && funcionario.Foto.Length > 0)
-                            pic_FFoto.Image = ImageUtil.BytesToImage(funcionario.Foto);
-                        else
-                            pic_FFoto.Image = Properties.Resources.icon_photo;
-
+                        txtBox_RG.Text = doc.RG;
                     }
                 }
             }
         }
-
 
     }
 }

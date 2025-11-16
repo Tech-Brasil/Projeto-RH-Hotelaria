@@ -78,7 +78,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(12, 234);
+            this.panel2.Location = new System.Drawing.Point(4, 234);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 2);
             this.panel2.TabIndex = 4;
@@ -100,11 +100,12 @@
             // btn_HistoricoAcesso
             // 
             this.btn_HistoricoAcesso.Animated = true;
+            this.btn_HistoricoAcesso.BackColor = System.Drawing.Color.Transparent;
             this.btn_HistoricoAcesso.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_HistoricoAcesso.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_HistoricoAcesso.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_HistoricoAcesso.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_HistoricoAcesso.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btn_HistoricoAcesso.FillColor = System.Drawing.Color.Transparent;
             this.btn_HistoricoAcesso.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_HistoricoAcesso.ForeColor = System.Drawing.Color.Gray;
             this.btn_HistoricoAcesso.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_subGerenciamento;
@@ -119,11 +120,12 @@
             // btn_AtivarDesativar
             // 
             this.btn_AtivarDesativar.Animated = true;
+            this.btn_AtivarDesativar.BackColor = System.Drawing.Color.Transparent;
             this.btn_AtivarDesativar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_AtivarDesativar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_AtivarDesativar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_AtivarDesativar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_AtivarDesativar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btn_AtivarDesativar.FillColor = System.Drawing.Color.Transparent;
             this.btn_AtivarDesativar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_AtivarDesativar.ForeColor = System.Drawing.Color.Gray;
             this.btn_AtivarDesativar.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_subOnOff_user_;
@@ -138,11 +140,12 @@
             // btn_Senha
             // 
             this.btn_Senha.Animated = true;
+            this.btn_Senha.BackColor = System.Drawing.Color.Transparent;
             this.btn_Senha.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Senha.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Senha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Senha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Senha.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btn_Senha.FillColor = System.Drawing.Color.Transparent;
             this.btn_Senha.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Senha.ForeColor = System.Drawing.Color.Gray;
             this.btn_Senha.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_alterarSenha_user_;
@@ -157,11 +160,12 @@
             // btn_Listar
             // 
             this.btn_Listar.Animated = true;
+            this.btn_Listar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Listar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Listar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Listar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Listar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Listar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btn_Listar.FillColor = System.Drawing.Color.Transparent;
             this.btn_Listar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Listar.ForeColor = System.Drawing.Color.Gray;
             this.btn_Listar.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_sublistar_user_;
@@ -176,11 +180,12 @@
             // btn_Permissao
             // 
             this.btn_Permissao.Animated = true;
+            this.btn_Permissao.BackColor = System.Drawing.Color.Transparent;
             this.btn_Permissao.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Permissao.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Permissao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Permissao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Permissao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btn_Permissao.FillColor = System.Drawing.Color.Transparent;
             this.btn_Permissao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Permissao.ForeColor = System.Drawing.Color.Gray;
             this.btn_Permissao.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_subPermissao_user_;
@@ -195,11 +200,12 @@
             // btn_Manager
             // 
             this.btn_Manager.Animated = true;
+            this.btn_Manager.BackColor = System.Drawing.Color.Transparent;
             this.btn_Manager.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_Manager.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_Manager.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Manager.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Manager.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.btn_Manager.FillColor = System.Drawing.Color.Transparent;
             this.btn_Manager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Manager.ForeColor = System.Drawing.Color.Gray;
             this.btn_Manager.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_subGerenciamento;
@@ -216,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(184, 642);
             this.Controls.Add(this.btn_HistoricoAcesso);
             this.Controls.Add(this.btn_AtivarDesativar);
@@ -234,7 +240,6 @@
             this.Name = "frmUsuariosSubmenu";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "pnlUsuariosSubmenu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

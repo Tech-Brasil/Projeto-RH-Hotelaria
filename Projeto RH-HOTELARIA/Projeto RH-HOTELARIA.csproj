@@ -173,6 +173,12 @@
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.Designer.cs">
       <DependentUpon>frmBuscarFunc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.Designer.cs">
+      <DependentUpon>frmBuscarRG.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.resx">
       <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.resx">
+      <DependentUpon>frmBuscarRG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.resx">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
@@ -370,6 +379,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-foto2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-buscar2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
