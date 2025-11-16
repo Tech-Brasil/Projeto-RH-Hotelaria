@@ -172,6 +172,7 @@
             this.btn_Listar.TabIndex = 6;
             this.btn_Listar.Text = "Listar Usuários";
             this.btn_Listar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
             // 
             // btn_Permissao
             // 
