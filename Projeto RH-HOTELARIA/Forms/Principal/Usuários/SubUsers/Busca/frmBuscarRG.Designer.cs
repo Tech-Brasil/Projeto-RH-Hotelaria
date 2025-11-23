@@ -374,10 +374,11 @@
             this.ClientSize = new System.Drawing.Size(409, 311);
             this.Controls.Add(this.tabControl_BuscRG);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmBuscarRG";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar RG";
             this.Load += new System.EventHandler(this.frmBuscarRG_Load);
             this.tabControl_BuscRG.ResumeLayout(false);

@@ -167,11 +167,17 @@
     <Compile Include="Forms\Principal\Usuários\frmUsuariosSubmenu.Designer.cs">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.cs">
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.Designer.cs">
-      <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.Designer.cs">
+      <DependentUpon>frmBuscarDocPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarPessoa.Designer.cs">
+      <DependentUpon>frmBuscarPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.cs">
       <SubType>Form</SubType>
@@ -189,6 +195,7 @@
     <Compile Include="Models\RH\RH_Endereco.cs" />
     <Compile Include="Models\RH\RH_Funcionario.cs" />
     <Compile Include="Models\RH\RH_Pessoa.cs" />
+    <Compile Include="Models\SYS\LocalSYS\Enum\UserRole.cs" />
     <Compile Include="Models\SYS\LocalSYS\SYS_Cidade.cs" />
     <Compile Include="Models\SYS\LocalSYS\SYS_Estado.cs" />
     <Compile Include="Models\SYS\LocalSYS\SYS_Pais.cs" />
@@ -226,8 +233,11 @@
     <EmbeddedResource Include="Forms\Principal\Usuários\frmUsuariosSubmenu.resx">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.resx">
-      <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.resx">
+      <DependentUpon>frmBuscarDocPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarPessoa.resx">
+      <DependentUpon>frmBuscarPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.resx">
       <DependentUpon>frmBuscarRG.cs</DependentUpon>

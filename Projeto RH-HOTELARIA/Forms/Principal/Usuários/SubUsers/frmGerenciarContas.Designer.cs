@@ -31,31 +31,32 @@
             this.pnl_Fundo = new System.Windows.Forms.Panel();
             this.pnl_Conteudo = new System.Windows.Forms.Panel();
             this.pnl_Pessoa = new System.Windows.Forms.Panel();
+            this.Ibtn_DbPessoa = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lbl_PData = new System.Windows.Forms.Label();
+            this.lbl_PNome = new System.Windows.Forms.Label();
+            this.lbl_Genero = new System.Windows.Forms.Label();
+            this.lbl_EstadoC = new System.Windows.Forms.Label();
+            this.lbl_PNacionalidade = new System.Windows.Forms.Label();
+            this.lbl_PEndereco = new System.Windows.Forms.Label();
             this.lbl_Pessoa = new System.Windows.Forms.Label();
             this.pnl_DocPessoal = new System.Windows.Forms.Panel();
+            this.Ibtn_DocPessoa = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_Nome = new System.Windows.Forms.Label();
+            this.guna2VSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.lbl_TituloEleitor = new System.Windows.Forms.Label();
+            this.lbl_CPF = new System.Windows.Forms.Label();
+            this.lbl_RG = new System.Windows.Forms.Label();
+            this.lbl_CTPS_Serie = new System.Windows.Forms.Label();
+            this.lbl_CTPS_Numero = new System.Windows.Forms.Label();
+            this.lbl_CNH_Numero = new System.Windows.Forms.Label();
+            this.lbl_CNH_Categoria = new System.Windows.Forms.Label();
+            this.lbl_CNH_Validade = new System.Windows.Forms.Label();
+            this.lbl_PIS = new System.Windows.Forms.Label();
             this.lbl_DocPesso = new System.Windows.Forms.Label();
             this.pnl_Foto = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_Foto = new System.Windows.Forms.PictureBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Login = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -77,7 +78,7 @@
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.btn_Deletar = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_Cadastrar = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_CategoriaT = new System.Windows.Forms.Label();
             this.btn_Editar = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
@@ -89,7 +90,7 @@
             this.pnl_DocPessoal.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnl_Foto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).BeginInit();
             this.pnl_Login.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_Top.SuspendLayout();
@@ -121,86 +122,104 @@
             // pnl_Pessoa
             // 
             this.pnl_Pessoa.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnl_Pessoa.Controls.Add(this.Ibtn_DbPessoa);
             this.pnl_Pessoa.Controls.Add(this.panel4);
             this.pnl_Pessoa.Controls.Add(this.lbl_Pessoa);
             this.pnl_Pessoa.Location = new System.Drawing.Point(503, 267);
             this.pnl_Pessoa.Name = "pnl_Pessoa";
             this.pnl_Pessoa.Size = new System.Drawing.Size(326, 221);
             this.pnl_Pessoa.TabIndex = 4;
+            this.pnl_Pessoa.Visible = false;
+            // 
+            // Ibtn_DbPessoa
+            // 
+            this.Ibtn_DbPessoa.BackColor = System.Drawing.Color.Transparent;
+            this.Ibtn_DbPessoa.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Ibtn_DbPessoa.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.Ibtn_DbPessoa.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_buscar1;
+            this.Ibtn_DbPessoa.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Ibtn_DbPessoa.ImageRotate = 0F;
+            this.Ibtn_DbPessoa.ImageSize = new System.Drawing.Size(25, 25);
+            this.Ibtn_DbPessoa.Location = new System.Drawing.Point(283, 6);
+            this.Ibtn_DbPessoa.Name = "Ibtn_DbPessoa";
+            this.Ibtn_DbPessoa.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.Ibtn_DbPessoa.Size = new System.Drawing.Size(25, 25);
+            this.Ibtn_DbPessoa.TabIndex = 12;
+            this.Ibtn_DbPessoa.Click += new System.EventHandler(this.Ibtn_DbPessoa_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.label22);
-            this.panel4.Controls.Add(this.label23);
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Controls.Add(this.label25);
+            this.panel4.Controls.Add(this.lbl_PData);
+            this.panel4.Controls.Add(this.lbl_PNome);
+            this.panel4.Controls.Add(this.lbl_Genero);
+            this.panel4.Controls.Add(this.lbl_EstadoC);
+            this.panel4.Controls.Add(this.lbl_PNacionalidade);
+            this.panel4.Controls.Add(this.lbl_PEndereco);
             this.panel4.Location = new System.Drawing.Point(-1, 37);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(331, 190);
             this.panel4.TabIndex = 2;
             // 
-            // label20
+            // lbl_PData
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(9, 40);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(118, 15);
-            this.label20.TabIndex = 12;
-            this.label20.Text = "Data de Nascimento:";
+            this.lbl_PData.AutoSize = true;
+            this.lbl_PData.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PData.Location = new System.Drawing.Point(9, 40);
+            this.lbl_PData.Name = "lbl_PData";
+            this.lbl_PData.Size = new System.Drawing.Size(121, 15);
+            this.lbl_PData.TabIndex = 12;
+            this.lbl_PData.Text = "Data de Nascimento: ";
             // 
-            // label21
+            // lbl_PNome
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(9, 9);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(98, 15);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Nome Completo:";
+            this.lbl_PNome.AutoSize = true;
+            this.lbl_PNome.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PNome.Location = new System.Drawing.Point(9, 9);
+            this.lbl_PNome.Name = "lbl_PNome";
+            this.lbl_PNome.Size = new System.Drawing.Size(101, 15);
+            this.lbl_PNome.TabIndex = 11;
+            this.lbl_PNome.Text = "Nome Completo: ";
             // 
-            // label22
+            // lbl_Genero
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(9, 71);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(48, 15);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Gênero:";
+            this.lbl_Genero.AutoSize = true;
+            this.lbl_Genero.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Genero.Location = new System.Drawing.Point(9, 71);
+            this.lbl_Genero.Name = "lbl_Genero";
+            this.lbl_Genero.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Genero.TabIndex = 10;
+            this.lbl_Genero.Text = "Gênero: ";
             // 
-            // label23
+            // lbl_EstadoC
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(9, 102);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(70, 15);
-            this.label23.TabIndex = 9;
-            this.label23.Text = "Estado Civil:";
+            this.lbl_EstadoC.AutoSize = true;
+            this.lbl_EstadoC.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EstadoC.Location = new System.Drawing.Point(9, 102);
+            this.lbl_EstadoC.Name = "lbl_EstadoC";
+            this.lbl_EstadoC.Size = new System.Drawing.Size(73, 15);
+            this.lbl_EstadoC.TabIndex = 9;
+            this.lbl_EstadoC.Text = "Estado Civil: ";
             // 
-            // label24
+            // lbl_PNacionalidade
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(9, 133);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(86, 15);
-            this.label24.TabIndex = 8;
-            this.label24.Text = "Nacionalidade:";
+            this.lbl_PNacionalidade.AutoSize = true;
+            this.lbl_PNacionalidade.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PNacionalidade.Location = new System.Drawing.Point(9, 133);
+            this.lbl_PNacionalidade.Name = "lbl_PNacionalidade";
+            this.lbl_PNacionalidade.Size = new System.Drawing.Size(89, 15);
+            this.lbl_PNacionalidade.TabIndex = 8;
+            this.lbl_PNacionalidade.Text = "Nacionalidade: ";
             // 
-            // label25
+            // lbl_PEndereco
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(9, 164);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(59, 15);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "Endereço:";
+            this.lbl_PEndereco.AutoSize = true;
+            this.lbl_PEndereco.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PEndereco.Location = new System.Drawing.Point(9, 164);
+            this.lbl_PEndereco.Name = "lbl_PEndereco";
+            this.lbl_PEndereco.Size = new System.Drawing.Size(62, 15);
+            this.lbl_PEndereco.TabIndex = 7;
+            this.lbl_PEndereco.Text = "Endereço: ";
             // 
             // lbl_Pessoa
             // 
@@ -217,152 +236,156 @@
             // pnl_DocPessoal
             // 
             this.pnl_DocPessoal.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnl_DocPessoal.Controls.Add(this.Ibtn_DocPessoa);
             this.pnl_DocPessoal.Controls.Add(this.panel3);
             this.pnl_DocPessoal.Controls.Add(this.lbl_DocPesso);
             this.pnl_DocPessoal.Location = new System.Drawing.Point(11, 267);
             this.pnl_DocPessoal.Name = "pnl_DocPessoal";
             this.pnl_DocPessoal.Size = new System.Drawing.Size(432, 221);
             this.pnl_DocPessoal.TabIndex = 3;
+            this.pnl_DocPessoal.Visible = false;
+            // 
+            // Ibtn_DocPessoa
+            // 
+            this.Ibtn_DocPessoa.BackColor = System.Drawing.Color.Transparent;
+            this.Ibtn_DocPessoa.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Ibtn_DocPessoa.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.Ibtn_DocPessoa.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_buscar1;
+            this.Ibtn_DocPessoa.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Ibtn_DocPessoa.ImageRotate = 0F;
+            this.Ibtn_DocPessoa.ImageSize = new System.Drawing.Size(25, 25);
+            this.Ibtn_DocPessoa.Location = new System.Drawing.Point(380, 6);
+            this.Ibtn_DocPessoa.Name = "Ibtn_DocPessoa";
+            this.Ibtn_DocPessoa.PressedState.ImageSize = new System.Drawing.Size(30, 30);
+            this.Ibtn_DocPessoa.Size = new System.Drawing.Size(25, 25);
+            this.Ibtn_DocPessoa.TabIndex = 11;
+            this.Ibtn_DocPessoa.Click += new System.EventHandler(this.Ibtn_DocPessoa_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lbl_Nome);
+            this.panel3.Controls.Add(this.guna2VSeparator3);
+            this.panel3.Controls.Add(this.lbl_TituloEleitor);
+            this.panel3.Controls.Add(this.lbl_CPF);
+            this.panel3.Controls.Add(this.lbl_RG);
+            this.panel3.Controls.Add(this.lbl_CTPS_Serie);
+            this.panel3.Controls.Add(this.lbl_CTPS_Numero);
+            this.panel3.Controls.Add(this.lbl_CNH_Numero);
+            this.panel3.Controls.Add(this.lbl_CNH_Categoria);
+            this.panel3.Controls.Add(this.lbl_CNH_Validade);
+            this.panel3.Controls.Add(this.lbl_PIS);
             this.panel3.Location = new System.Drawing.Point(-1, 37);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(437, 190);
             this.panel3.TabIndex = 2;
             // 
-            // label13
+            // lbl_Nome
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(212, 162);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(124, 15);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Nacionalidade: XXXXX";
+            this.lbl_Nome.AutoSize = true;
+            this.lbl_Nome.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Nome.Location = new System.Drawing.Point(212, 9);
+            this.lbl_Nome.Name = "lbl_Nome";
+            this.lbl_Nome.Size = new System.Drawing.Size(46, 15);
+            this.lbl_Nome.TabIndex = 17;
+            this.lbl_Nome.Text = "Nome: ";
             // 
-            // label12
+            // guna2VSeparator3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(212, 133);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(143, 15);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Nascimento: XX/XX/XXXX";
+            this.guna2VSeparator3.Location = new System.Drawing.Point(196, 3);
+            this.guna2VSeparator3.Name = "guna2VSeparator3";
+            this.guna2VSeparator3.Size = new System.Drawing.Size(10, 178);
+            this.guna2VSeparator3.TabIndex = 9;
             // 
-            // label11
+            // lbl_TituloEleitor
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(212, 102);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 15);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Título Eleitor: XXXX";
+            this.lbl_TituloEleitor.AutoSize = true;
+            this.lbl_TituloEleitor.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TituloEleitor.Location = new System.Drawing.Point(212, 102);
+            this.lbl_TituloEleitor.Name = "lbl_TituloEleitor";
+            this.lbl_TituloEleitor.Size = new System.Drawing.Size(80, 15);
+            this.lbl_TituloEleitor.TabIndex = 16;
+            this.lbl_TituloEleitor.Text = "Título Eleitor: ";
             // 
-            // label10
+            // lbl_CPF
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(212, 71);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 15);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "CPF: XXXXXXXXXX";
+            this.lbl_CPF.AutoSize = true;
+            this.lbl_CPF.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CPF.Location = new System.Drawing.Point(212, 71);
+            this.lbl_CPF.Name = "lbl_CPF";
+            this.lbl_CPF.Size = new System.Drawing.Size(33, 15);
+            this.lbl_CPF.TabIndex = 15;
+            this.lbl_CPF.Text = "CPF: ";
             // 
-            // label9
+            // lbl_RG
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(212, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 15);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "RG: XXXXX";
+            this.lbl_RG.AutoSize = true;
+            this.lbl_RG.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RG.Location = new System.Drawing.Point(212, 40);
+            this.lbl_RG.Name = "lbl_RG";
+            this.lbl_RG.Size = new System.Drawing.Size(28, 15);
+            this.lbl_RG.TabIndex = 14;
+            this.lbl_RG.Text = "RG: ";
             // 
-            // label8
+            // lbl_CTPS_Serie
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(212, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 15);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Nome: XXXXXXXXXX";
+            this.lbl_CTPS_Serie.AutoSize = true;
+            this.lbl_CTPS_Serie.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CTPS_Serie.Location = new System.Drawing.Point(8, 40);
+            this.lbl_CTPS_Serie.Name = "lbl_CTPS_Serie";
+            this.lbl_CTPS_Serie.Size = new System.Drawing.Size(70, 15);
+            this.lbl_CTPS_Serie.TabIndex = 12;
+            this.lbl_CTPS_Serie.Text = "CTPS Série: ";
             // 
-            // label6
+            // lbl_CTPS_Numero
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "CTPS Série: XXXXX";
+            this.lbl_CTPS_Numero.AutoSize = true;
+            this.lbl_CTPS_Numero.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CTPS_Numero.Location = new System.Drawing.Point(8, 9);
+            this.lbl_CTPS_Numero.Name = "lbl_CTPS_Numero";
+            this.lbl_CTPS_Numero.Size = new System.Drawing.Size(88, 15);
+            this.lbl_CTPS_Numero.TabIndex = 11;
+            this.lbl_CTPS_Numero.Text = "CTPS Número: ";
             // 
-            // label7
+            // lbl_CNH_Numero
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 15);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "CTPS Número: XXXXX";
+            this.lbl_CNH_Numero.AutoSize = true;
+            this.lbl_CNH_Numero.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CNH_Numero.Location = new System.Drawing.Point(8, 71);
+            this.lbl_CNH_Numero.Name = "lbl_CNH_Numero";
+            this.lbl_CNH_Numero.Size = new System.Drawing.Size(85, 15);
+            this.lbl_CNH_Numero.TabIndex = 10;
+            this.lbl_CNH_Numero.Text = "CNH Número: ";
             // 
-            // label3
+            // lbl_CNH_Categoria
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 15);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "CNH Número: XXXXX ";
+            this.lbl_CNH_Categoria.AutoSize = true;
+            this.lbl_CNH_Categoria.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CNH_Categoria.Location = new System.Drawing.Point(8, 102);
+            this.lbl_CNH_Categoria.Name = "lbl_CNH_Categoria";
+            this.lbl_CNH_Categoria.Size = new System.Drawing.Size(91, 15);
+            this.lbl_CNH_Categoria.TabIndex = 9;
+            this.lbl_CNH_Categoria.Text = "CNH Categoria: ";
             // 
-            // label4
+            // lbl_CNH_Validade
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "CNH Categoria: X";
+            this.lbl_CNH_Validade.AutoSize = true;
+            this.lbl_CNH_Validade.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CNH_Validade.Location = new System.Drawing.Point(8, 133);
+            this.lbl_CNH_Validade.Name = "lbl_CNH_Validade";
+            this.lbl_CNH_Validade.Size = new System.Drawing.Size(86, 15);
+            this.lbl_CNH_Validade.TabIndex = 8;
+            this.lbl_CNH_Validade.Text = "CNH Validade: ";
             // 
-            // label2
+            // lbl_PIS
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 133);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "CNH Validade: XX/XX/XXXX";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 164);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "PIS: XXXXX";
+            this.lbl_PIS.AutoSize = true;
+            this.lbl_PIS.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PIS.Location = new System.Drawing.Point(8, 164);
+            this.lbl_PIS.Name = "lbl_PIS";
+            this.lbl_PIS.Size = new System.Drawing.Size(31, 15);
+            this.lbl_PIS.TabIndex = 7;
+            this.lbl_PIS.Text = "PIS: ";
             // 
             // lbl_DocPesso
             // 
@@ -379,22 +402,22 @@
             // pnl_Foto
             // 
             this.pnl_Foto.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnl_Foto.Controls.Add(this.pictureBox1);
+            this.pnl_Foto.Controls.Add(this.pic_Foto);
             this.pnl_Foto.Controls.Add(this.guna2Button2);
             this.pnl_Foto.Location = new System.Drawing.Point(579, 15);
             this.pnl_Foto.Name = "pnl_Foto";
             this.pnl_Foto.Size = new System.Drawing.Size(210, 174);
             this.pnl_Foto.TabIndex = 3;
             // 
-            // pictureBox1
+            // pic_Foto
             // 
-            this.pictureBox1.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_foto2;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pic_Foto.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_foto2;
+            this.pic_Foto.Location = new System.Drawing.Point(56, 25);
+            this.pic_Foto.Name = "pic_Foto";
+            this.pic_Foto.Size = new System.Drawing.Size(100, 100);
+            this.pic_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Foto.TabIndex = 10;
+            this.pic_Foto.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -449,14 +472,14 @@
             // 
             this.Ibtn_BuscarRG.BackColor = System.Drawing.Color.Transparent;
             this.Ibtn_BuscarRG.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Ibtn_BuscarRG.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Ibtn_BuscarRG.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.Ibtn_BuscarRG.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_buscar1;
             this.Ibtn_BuscarRG.ImageOffset = new System.Drawing.Point(0, 0);
             this.Ibtn_BuscarRG.ImageRotate = 0F;
             this.Ibtn_BuscarRG.ImageSize = new System.Drawing.Size(25, 25);
             this.Ibtn_BuscarRG.Location = new System.Drawing.Point(147, 17);
             this.Ibtn_BuscarRG.Name = "Ibtn_BuscarRG";
-            this.Ibtn_BuscarRG.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Ibtn_BuscarRG.PressedState.ImageSize = new System.Drawing.Size(30, 30);
             this.Ibtn_BuscarRG.Size = new System.Drawing.Size(25, 25);
             this.Ibtn_BuscarRG.TabIndex = 5;
             this.Ibtn_BuscarRG.Click += new System.EventHandler(this.btn_buscarRG);
@@ -535,32 +558,36 @@
             // 
             // cBox_Cargo
             // 
+            this.cBox_Cargo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBox_Cargo.FormattingEnabled = true;
             this.cBox_Cargo.Location = new System.Drawing.Point(200, 103);
             this.cBox_Cargo.Name = "cBox_Cargo";
-            this.cBox_Cargo.Size = new System.Drawing.Size(162, 21);
+            this.cBox_Cargo.Size = new System.Drawing.Size(162, 23);
             this.cBox_Cargo.TabIndex = 3;
             // 
             // txtBox_Login
             // 
+            this.txtBox_Login.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Login.Location = new System.Drawing.Point(200, 45);
             this.txtBox_Login.Name = "txtBox_Login";
-            this.txtBox_Login.Size = new System.Drawing.Size(162, 22);
+            this.txtBox_Login.Size = new System.Drawing.Size(162, 23);
             this.txtBox_Login.TabIndex = 2;
             // 
             // txtBox_Senha
             // 
+            this.txtBox_Senha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_Senha.Location = new System.Drawing.Point(10, 103);
             this.txtBox_Senha.Name = "txtBox_Senha";
-            this.txtBox_Senha.Size = new System.Drawing.Size(162, 22);
+            this.txtBox_Senha.Size = new System.Drawing.Size(162, 23);
             this.txtBox_Senha.TabIndex = 1;
             // 
             // txtBox_RG
             // 
             this.txtBox_RG.Enabled = false;
+            this.txtBox_RG.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox_RG.Location = new System.Drawing.Point(10, 45);
             this.txtBox_RG.Name = "txtBox_RG";
-            this.txtBox_RG.Size = new System.Drawing.Size(162, 22);
+            this.txtBox_RG.Size = new System.Drawing.Size(162, 23);
             this.txtBox_RG.TabIndex = 0;
             // 
             // label1
@@ -582,7 +609,7 @@
             this.pnl_Top.Controls.Add(this.guna2VSeparator1);
             this.pnl_Top.Controls.Add(this.guna2Separator1);
             this.pnl_Top.Controls.Add(this.btn_Deletar);
-            this.pnl_Top.Controls.Add(this.guna2Button1);
+            this.pnl_Top.Controls.Add(this.btn_Cadastrar);
             this.pnl_Top.Controls.Add(this.lbl_CategoriaT);
             this.pnl_Top.Controls.Add(this.btn_Editar);
             this.pnl_Top.Controls.Add(this.lbl_Titulo);
@@ -631,25 +658,27 @@
             this.btn_Deletar.Size = new System.Drawing.Size(107, 36);
             this.btn_Deletar.TabIndex = 4;
             this.btn_Deletar.Text = "Deletar";
+            this.btn_Deletar.Click += new System.EventHandler(this.btn_Deletar_Click);
             // 
-            // guna2Button1
+            // btn_Cadastrar
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.LimeGreen;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.35F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_cadastrar;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button1.Location = new System.Drawing.Point(676, 23);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(135, 40);
-            this.guna2Button1.TabIndex = 5;
-            this.guna2Button1.Text = "Cadastrar";
+            this.btn_Cadastrar.Animated = true;
+            this.btn_Cadastrar.AutoRoundedCorners = true;
+            this.btn_Cadastrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Cadastrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Cadastrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Cadastrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Cadastrar.FillColor = System.Drawing.Color.Transparent;
+            this.btn_Cadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Cadastrar.ForeColor = System.Drawing.Color.White;
+            this.btn_Cadastrar.Image = global::Projeto_RH_HOTELARIA.Properties.Resources.icon_cadastrar;
+            this.btn_Cadastrar.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Cadastrar.Location = new System.Drawing.Point(676, 23);
+            this.btn_Cadastrar.Name = "btn_Cadastrar";
+            this.btn_Cadastrar.Size = new System.Drawing.Size(135, 40);
+            this.btn_Cadastrar.TabIndex = 5;
+            this.btn_Cadastrar.Text = "Cadastrar";
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // lbl_CategoriaT
             // 
@@ -681,6 +710,7 @@
             this.btn_Editar.Size = new System.Drawing.Size(107, 36);
             this.btn_Editar.TabIndex = 2;
             this.btn_Editar.Text = "Editar";
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // lbl_Titulo
             // 
@@ -712,6 +742,7 @@
             this.btn_Buscar.Size = new System.Drawing.Size(107, 36);
             this.btn_Buscar.TabIndex = 0;
             this.btn_Buscar.Text = "Buscar";
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // frmGerenciarContas
             // 
@@ -737,7 +768,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnl_Foto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).EndInit();
             this.pnl_Login.ResumeLayout(false);
             this.pnl_Login.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -756,7 +787,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_Editar;
         private Guna.UI2.WinForms.Guna2Button btn_Deletar;
         private System.Windows.Forms.Label lbl_Titulo;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_Cadastrar;
         private System.Windows.Forms.Label lbl_CategoriaT;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator2;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
@@ -777,31 +808,32 @@
         private System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Panel pnl_Foto;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_Foto;
         private System.Windows.Forms.Panel pnl_DocPessoal;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_CTPS_Serie;
+        private System.Windows.Forms.Label lbl_CTPS_Numero;
+        private System.Windows.Forms.Label lbl_CNH_Numero;
+        private System.Windows.Forms.Label lbl_CNH_Categoria;
+        private System.Windows.Forms.Label lbl_CNH_Validade;
+        private System.Windows.Forms.Label lbl_PIS;
         private System.Windows.Forms.Label lbl_DocPesso;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_RG;
+        private System.Windows.Forms.Label lbl_TituloEleitor;
+        private System.Windows.Forms.Label lbl_CPF;
         private System.Windows.Forms.Panel pnl_Pessoa;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lbl_PData;
+        private System.Windows.Forms.Label lbl_PNome;
+        private System.Windows.Forms.Label lbl_Genero;
+        private System.Windows.Forms.Label lbl_EstadoC;
+        private System.Windows.Forms.Label lbl_PNacionalidade;
+        private System.Windows.Forms.Label lbl_PEndereco;
         private System.Windows.Forms.Label lbl_Pessoa;
         private Guna.UI2.WinForms.Guna2ImageButton Ibtn_BuscarRG;
+        private Guna.UI2.WinForms.Guna2ImageButton Ibtn_DbPessoa;
+        private Guna.UI2.WinForms.Guna2ImageButton Ibtn_DocPessoa;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator3;
+        private System.Windows.Forms.Label lbl_Nome;
     }
 }
