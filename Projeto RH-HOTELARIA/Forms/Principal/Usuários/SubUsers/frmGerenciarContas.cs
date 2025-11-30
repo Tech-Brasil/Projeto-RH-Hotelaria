@@ -6,6 +6,7 @@ using Projeto_RH_HOTELARIA.Models.SYS.LocalSYS.Enum;
 using Projeto_RH_HOTELARIA.Services;
 using Projeto_RH_HOTELARIA.Utils;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
@@ -19,6 +20,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             InitializeComponent();
         }
 
+        #region Load
         private void frmGerenciarContas_Load(object sender, EventArgs e)
         {
             UIStyle.ArredondarPanel(pnl_Top, 25);
@@ -37,6 +39,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             cBox_Cargo.Items.Add(UserRole.Financeiro);
             cBox_Cargo.Items.Add(UserRole.Convidado);
         }
+        #endregion
 
         #region CRUD
 
@@ -52,6 +55,14 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
                 return;
             }
 
+            var result = Criptografia.HashSenha(txtBox_Senha.Text);
+
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var usuarioExistente = service.BuscarPorLogin(txtBox_Login.Text);
             if (usuarioExistente != null)
             {
@@ -59,11 +70,13 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
                 return;
             }
 
+            var senhaHash = result.Hash;
+
             var usuario = new SYS_Usuario
             {
                 RG = txtBox_RG.Text,
                 Login = txtBox_Login.Text.Trim(),
-                SenhaHash = Criptografia.HashSenha(txtBox_Senha.Text),
+                SenhaHash = senhaHash,
                 Role = cBox_Cargo.SelectedItem.ToString(),
                 Ativo = rBtn_Ativo.Checked,
                 Foto = pic_Foto.Image != null
@@ -202,7 +215,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             cBox_Cargo.SelectedIndex = -1;
             rBtn_Ativo.Checked = false;
             rBtn_Inativo.Checked = false;
-            pic_Foto.Image = null;
+            pic_Foto.Image = Properties.Resources.icon_photo;
         }
         #endregion
 

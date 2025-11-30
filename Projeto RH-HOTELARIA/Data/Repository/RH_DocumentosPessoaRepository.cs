@@ -10,19 +10,13 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 {
     public class RH_DocumentosPessoaRepository : IRH_DocumentosPessoa
     {
-        private readonly string _context;
-
-        public RH_DocumentosPessoaRepository()
-        {
-            _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
-        }
         private object DbNull(object value) => value ?? DBNull.Value;
 
         public void Inserir(RH_DocumentosPessoa doc)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_DocumentosPessoa", conn);
@@ -52,7 +46,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_DocumentosPessoa", conn);
@@ -83,7 +77,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_DocumentosPessoa", conn);
@@ -106,7 +100,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_DocumentosPessoa", conn);
@@ -150,7 +144,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_DocumentosPessoa", conn);

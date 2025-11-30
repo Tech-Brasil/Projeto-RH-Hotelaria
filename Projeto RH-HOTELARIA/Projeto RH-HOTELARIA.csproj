@@ -134,6 +134,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Db.cs" />
     <Compile Include="Data\IRepository\IRH_DocumentosPessoa.cs" />
     <Compile Include="Data\IRepository\IRH_Funcionario.cs" />
     <Compile Include="Data\IRepository\IRH_Pessoa.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Services\SYS_UsuarioService.cs" />
     <Compile Include="Utils\Criptografia.cs" />
     <Compile Include="Utils\ImageUtil.cs" />
+    <Compile Include="Utils\Model\HashResult.cs" />
     <Compile Include="Utils\UIStyle.cs" />
     <Compile Include="Utils\Validacoes.cs" />
     <EmbeddedResource Include="Forms\frmCarregamento.resx">

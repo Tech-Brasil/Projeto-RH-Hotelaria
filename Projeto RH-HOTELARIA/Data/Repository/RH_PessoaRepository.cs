@@ -10,16 +10,9 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 {
     public class RH_PessoaRepository : IRH_Pessoa
     {
-        private readonly string _context;
-
-        public RH_PessoaRepository()
-        {
-            _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
-        }
-
         public void Inserir(RH_Pessoa pessoa)
         {
-            using (SqlConnection conn = new SqlConnection(_context))
+            using (SqlConnection conn = Db.Connect())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("usp_RH_Pessoa", conn);
@@ -39,7 +32,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
         public void Alterar(RH_Pessoa pessoa)
         {
-            using (SqlConnection conn = new SqlConnection(_context))
+            using (SqlConnection conn = Db.Connect())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("usp_RH_Pessoa", conn);
@@ -59,7 +52,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
         public void Excluir(string nome)
         {
-            using (SqlConnection conn = new SqlConnection(_context))
+            using (SqlConnection conn = Db.Connect())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("usp_RH_Pessoa", conn);
@@ -74,7 +67,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             RH_Pessoa pessoa = null;
 
-            using (SqlConnection conn = new SqlConnection(_context))
+            using (SqlConnection conn = Db.Connect())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("usp_RH_Pessoa", conn);
@@ -107,7 +100,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             List<RH_Pessoa> lista = new List<RH_Pessoa>();
 
-            using (SqlConnection conn = new SqlConnection(_context))
+            using (SqlConnection conn = Db.Connect())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("usp_RH_Pessoa", conn);
