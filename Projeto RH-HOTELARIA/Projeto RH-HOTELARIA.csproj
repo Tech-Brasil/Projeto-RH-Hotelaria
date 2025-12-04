@@ -186,11 +186,35 @@
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.Designer.cs">
       <DependentUpon>frmBuscarRG.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarUser.Designer.cs">
+      <DependentUpon>frmBuscarUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAlterarSenha.Designer.cs">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAtivDesaUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAtivDesaUser.Designer.cs">
+      <DependentUpon>frmAtivDesaUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.Designer.cs">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.Designer.cs">
+      <DependentUpon>frmPermissoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\RH\RH_DocumentosPessoa.cs" />
     <Compile Include="Models\RH\RH_Endereco.cs" />
@@ -244,8 +268,20 @@
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.resx">
       <DependentUpon>frmBuscarRG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarUser.resx">
+      <DependentUpon>frmBuscarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmAlterarSenha.resx">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmAtivDesaUser.resx">
+      <DependentUpon>frmAtivDesaUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.resx">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.resx">
+      <DependentUpon>frmPermissoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

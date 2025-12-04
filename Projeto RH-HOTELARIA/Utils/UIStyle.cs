@@ -66,7 +66,7 @@ namespace Projeto_RH_HOTELARIA.Utils
             dgv.AllowUserToDeleteRows = false;
             dgv.AllowUserToResizeRows = false;
             dgv.RowHeadersVisible = false;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; <-- Defeito: pode cortar conteúdo importante
 
             // Bordas suaves
             dgv.GridColor = Color.FromArgb(230, 230, 230);

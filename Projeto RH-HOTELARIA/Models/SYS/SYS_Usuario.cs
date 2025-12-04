@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projeto_RH_HOTELARIA.Models.SYS
 {
@@ -16,7 +12,6 @@ namespace Projeto_RH_HOTELARIA.Models.SYS
         public string SenhaHash { get; set; }
         public string Role { get; set; }
         public bool Ativo { get; set; }
-        public byte[] Foto { get; set; }
         public DateTime CriadoEm { get; set; }
         public DateTime? UltimoLogin { get; set; }
     }

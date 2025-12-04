@@ -95,15 +95,14 @@ GO
 -----------------------------
 CREATE TABLE SYS_Usuario (
     UsuarioId INT IDENTITY(1,1) PRIMARY KEY,
-    Rg NVARCHAR(15) NOT NULL,
+    RG NVARCHAR(15) NOT NULL,
     Login NVARCHAR(100) NOT NULL UNIQUE,
     SenhaHash NVARCHAR(200) NOT NULL,
     Role NVARCHAR(50) NOT NULL,
     Ativo BIT DEFAULT 1,
-    Foto VARBINARY(MAX) NULL,
     UltimoLogin DATETIME NULL,
     CriadoEm DATETIME DEFAULT SYSDATETIME(),
-    FOREIGN KEY (Rg) REFERENCES RH_DocumentosPessoa(RG)
+    FOREIGN KEY (RG) REFERENCES RH_DocumentosPessoa(RG)
 );
 GO
 
@@ -130,7 +129,7 @@ GO
 -- RH_Pessoa
 -- =============================================
 CREATE OR ALTER PROC usp_RH_Pessoa
-    @Acao INT, -- 1=INSERT | 2=UPDATE | 3=DELETE | 4=SELECT
+    @Acao INT, 
     @Nome NVARCHAR(200) = NULL,
     @DataNascimento DATE = NULL,
     @Genero CHAR(1) = NULL,
@@ -158,8 +157,7 @@ BEGIN
         DELETE FROM RH_Pessoa WHERE Nome = @Nome;
 
     ELSE IF @Acao = 4
-        SELECT Nome, DataNascimento, Genero, Nacionalidade, EstadoCivil, EnderecoId, DataCriacao
-        FROM RH_Pessoa
+        SELECT * FROM RH_Pessoa
         WHERE (@Nome IS NULL OR Nome LIKE '%' + @Nome + '%');
 END;
 GO
@@ -317,33 +315,37 @@ CREATE OR ALTER PROC usp_SYS_Usuario
     @Login NVARCHAR(100) = NULL,
     @SenhaHash NVARCHAR(200) = NULL,
     @Role NVARCHAR(50) = NULL,
-    @Ativo BIT = 1,
-    @Foto VARBINARY(MAX) = NULL
+    @Ativo BIT = 1
 AS
 BEGIN
     SET NOCOUNT ON;
 
     IF @Acao = 1
-        INSERT INTO SYS_Usuario (RG, Login, SenhaHash, Role, Ativo, Foto)
-        VALUES (@RG, @Login, @SenhaHash, @Role, @Ativo, @Foto);
+        INSERT INTO SYS_Usuario (RG, Login, SenhaHash, Role, Ativo)
+        VALUES (@RG, @Login, @SenhaHash, @Role, @Ativo);
 
     ELSE IF @Acao = 2
         UPDATE SYS_Usuario
         SET Login = @Login,
             SenhaHash = @SenhaHash,
             Role = @Role,
-            Ativo = @Ativo,
-            Foto = @Foto
+            Ativo = @Ativo
         WHERE UsuarioId = @UsuarioId;
 
     ELSE IF @Acao = 3
         DELETE FROM SYS_Usuario WHERE UsuarioId = @UsuarioId;
 
     ELSE IF @Acao = 4
-        SELECT u.UsuarioId, u.Login, u.Role, u.Ativo, u.CriadoEm, d.RG, p.Nome
+        SELECT 
+            u.UsuarioId,
+            u.RG,
+            u.Login,
+            u.SenhaHash,
+            u.Role,
+            u.Ativo,
+            u.CriadoEm,
+            u.UltimoLogin
         FROM SYS_Usuario u
-        INNER JOIN RH_DocumentosPessoa d ON u.RG = d.RG
-        INNER JOIN RH_Pessoa p ON d.PessoaNome = p.Nome
         WHERE (@UsuarioId IS NULL OR u.UsuarioId = @UsuarioId)
           AND (@Login IS NULL OR u.Login LIKE '%' + @Login + '%');
 END;
@@ -389,7 +391,6 @@ BEGIN
 
     DECLARE @Acao NVARCHAR(50);
     DECLARE @Tabela NVARCHAR(100) = 'SYS_Usuario';
-    DECLARE @UsuarioId INT;
     DECLARE @ChaveRegistro NVARCHAR(100);
 
     IF EXISTS (SELECT * FROM inserted) AND EXISTS (SELECT * FROM deleted)
@@ -399,13 +400,12 @@ BEGIN
     ELSE
         SET @Acao = 'DELETE';
 
-    SELECT TOP 1 @ChaveRegistro = CONVERT(NVARCHAR(100), ISNULL(i.UsuarioId, d.UsuarioId))
+    SELECT TOP 1 @ChaveRegistro = CONVERT(NVARCHAR(100),
+        ISNULL(i.UsuarioId, d.UsuarioId))
     FROM inserted i
     FULL JOIN deleted d ON 1=1;
 
-    SET @UsuarioId = NULL;
-
     INSERT INTO SYS_Auditoria (UsuarioId, Acao, TabelaAfetada, ChaveRegistro)
-    VALUES (@UsuarioId, @Acao, @Tabela, @ChaveRegistro);
+    VALUES (NULL, @Acao, @Tabela, @ChaveRegistro);
 END;
 GO
