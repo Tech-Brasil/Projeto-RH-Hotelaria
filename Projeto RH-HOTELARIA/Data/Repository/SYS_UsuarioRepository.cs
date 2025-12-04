@@ -27,7 +27,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.Parameters.AddWithValue("@SenhaHash", usuario.SenhaHash);
                     cmd.Parameters.AddWithValue("@Role", usuario.Role);
                     cmd.Parameters.AddWithValue("@Ativo", usuario.Ativo);
-                    cmd.Parameters.AddWithValue("@Foto", DbNull(usuario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
@@ -55,7 +54,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.Parameters.AddWithValue("@SenhaHash", usuario.SenhaHash);
                     cmd.Parameters.AddWithValue("@Role", usuario.Role);
                     cmd.Parameters.AddWithValue("@Ativo", usuario.Ativo);
-                    cmd.Parameters.AddWithValue("@Foto", DbNull(usuario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
@@ -113,7 +111,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                                 SenhaHash = reader["SenhaHash"].ToString(),
                                 Role = reader["Role"].ToString(),
                                 Ativo = (bool)reader["Ativo"],
-                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             };
                         }
                     }
@@ -153,7 +150,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                                 SenhaHash = reader["SenhaHash"].ToString(),
                                 Role = reader["Role"].ToString(),
                                 Ativo = (bool)reader["Ativo"],
-                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             };
                         }
                     }
@@ -191,7 +187,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                                 Login = reader["Login"].ToString(),
                                 Role = reader["Role"].ToString(),
                                 Ativo = (bool)reader["Ativo"],
-                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             });
                         }
                     }

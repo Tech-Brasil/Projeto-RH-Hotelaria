@@ -83,6 +83,7 @@
             this.btn_Editar = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.btn_Buscar = new Guna.UI2.WinForms.Guna2Button();
+            this.lbl_Requerimento = new System.Windows.Forms.Label();
             this.pnl_Fundo.SuspendLayout();
             this.pnl_Conteudo.SuspendLayout();
             this.pnl_Pessoa.SuspendLayout();
@@ -227,7 +228,7 @@
             this.lbl_Pessoa.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Pessoa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Pessoa.ForeColor = System.Drawing.SystemColors.Window;
-            this.lbl_Pessoa.Location = new System.Drawing.Point(6, 6);
+            this.lbl_Pessoa.Location = new System.Drawing.Point(84, 6);
             this.lbl_Pessoa.Name = "lbl_Pessoa";
             this.lbl_Pessoa.Size = new System.Drawing.Size(159, 25);
             this.lbl_Pessoa.TabIndex = 1;
@@ -393,7 +394,7 @@
             this.lbl_DocPesso.BackColor = System.Drawing.Color.Transparent;
             this.lbl_DocPesso.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DocPesso.ForeColor = System.Drawing.SystemColors.Window;
-            this.lbl_DocPesso.Location = new System.Drawing.Point(6, 6);
+            this.lbl_DocPesso.Location = new System.Drawing.Point(115, 6);
             this.lbl_DocPesso.Name = "lbl_DocPesso";
             this.lbl_DocPesso.Size = new System.Drawing.Size(202, 25);
             this.lbl_DocPesso.TabIndex = 1;
@@ -404,6 +405,7 @@
             this.pnl_Foto.BackColor = System.Drawing.Color.Gainsboro;
             this.pnl_Foto.Controls.Add(this.pic_Foto);
             this.pnl_Foto.Controls.Add(this.guna2Button2);
+            this.pnl_Foto.Enabled = false;
             this.pnl_Foto.Location = new System.Drawing.Point(579, 15);
             this.pnl_Foto.Name = "pnl_Foto";
             this.pnl_Foto.Size = new System.Drawing.Size(210, 174);
@@ -445,12 +447,13 @@
             this.pnl_Login.Controls.Add(this.label1);
             this.pnl_Login.Location = new System.Drawing.Point(11, 15);
             this.pnl_Login.Name = "pnl_Login";
-            this.pnl_Login.Size = new System.Drawing.Size(497, 174);
+            this.pnl_Login.Size = new System.Drawing.Size(497, 230);
             this.pnl_Login.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.lbl_Requerimento);
             this.panel1.Controls.Add(this.Ibtn_BuscarRG);
             this.panel1.Controls.Add(this.lbl_Lcargo);
             this.panel1.Controls.Add(this.lbl_Login);
@@ -465,7 +468,7 @@
             this.panel1.Controls.Add(this.txtBox_RG);
             this.panel1.Location = new System.Drawing.Point(0, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 146);
+            this.panel1.Size = new System.Drawing.Size(497, 196);
             this.panel1.TabIndex = 2;
             // 
             // Ibtn_BuscarRG
@@ -527,7 +530,7 @@
             // rBtn_Inativo
             // 
             this.rBtn_Inativo.AutoSize = true;
-            this.rBtn_Inativo.Location = new System.Drawing.Point(399, 73);
+            this.rBtn_Inativo.Location = new System.Drawing.Point(399, 94);
             this.rBtn_Inativo.Name = "rBtn_Inativo";
             this.rBtn_Inativo.Size = new System.Drawing.Size(60, 17);
             this.rBtn_Inativo.TabIndex = 6;
@@ -538,7 +541,7 @@
             // rBtn_Ativo
             // 
             this.rBtn_Ativo.AutoSize = true;
-            this.rBtn_Ativo.Location = new System.Drawing.Point(399, 50);
+            this.rBtn_Ativo.Location = new System.Drawing.Point(399, 71);
             this.rBtn_Ativo.Name = "rBtn_Ativo";
             this.rBtn_Ativo.Size = new System.Drawing.Size(51, 17);
             this.rBtn_Ativo.TabIndex = 5;
@@ -550,7 +553,7 @@
             // 
             this.lbl_Status.AutoSize = true;
             this.lbl_Status.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Status.Location = new System.Drawing.Point(396, 32);
+            this.lbl_Status.Location = new System.Drawing.Point(396, 53);
             this.lbl_Status.Name = "lbl_Status";
             this.lbl_Status.Size = new System.Drawing.Size(40, 15);
             this.lbl_Status.TabIndex = 4;
@@ -596,7 +599,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(6, 6);
+            this.label1.Location = new System.Drawing.Point(165, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 25);
             this.label1.TabIndex = 1;
@@ -744,6 +747,18 @@
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
+            // lbl_Requerimento
+            // 
+            this.lbl_Requerimento.AutoSize = true;
+            this.lbl_Requerimento.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Requerimento.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Requerimento.Location = new System.Drawing.Point(290, 136);
+            this.lbl_Requerimento.Name = "lbl_Requerimento";
+            this.lbl_Requerimento.Size = new System.Drawing.Size(167, 52);
+            this.lbl_Requerimento.TabIndex = 18;
+            this.lbl_Requerimento.Text = "Requisitos da senha:\r\n• Mínimo de 8 caracteres\r\n• Pelo menos 1 letra maiúscula\r\n•" +
+    " Pelo menos 1 letra minúscula\r\n";
+            // 
             // frmGerenciarContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,5 +850,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton Ibtn_DocPessoa;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator3;
         private System.Windows.Forms.Label lbl_Nome;
+        private System.Windows.Forms.Label lbl_Requerimento;
     }
 }

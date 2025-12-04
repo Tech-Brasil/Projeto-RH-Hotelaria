@@ -78,10 +78,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
                 Login = txtBox_Login.Text.Trim(),
                 SenhaHash = senhaHash,
                 Role = cBox_Cargo.SelectedItem.ToString(),
-                Ativo = rBtn_Ativo.Checked,
-                Foto = pic_Foto.Image != null
-                    ? ImageUtil.ImageToBytes(pic_Foto.Image)
-                    : null
+                Ativo = rBtn_Ativo.Checked
             };
 
             try
@@ -210,12 +207,14 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
         #region função
         private void LimparCampos()
         {
+            txtBox_RG.Clear();
             txtBox_Login.Clear();
             txtBox_Senha.Clear();
             cBox_Cargo.SelectedIndex = -1;
             rBtn_Ativo.Checked = false;
             rBtn_Inativo.Checked = false;
-            pic_Foto.Image = Properties.Resources.icon_photo;
+            pnl_DocPessoal.Visible = false;
+            pnl_Pessoa.Visible = false;
         }
         #endregion
 
