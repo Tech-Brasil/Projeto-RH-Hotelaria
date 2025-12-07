@@ -21,5 +21,10 @@ namespace Projeto_RH_HOTELARIA.Models.RH
         public DateTime? CNH_Validade { get; set; }
         public string PIS { get; set; }
         public DateTime DataEmissao { get; set; }
+
+        public override string ToString()
+        {
+            return $"{PessoaNome} | RG: {RG}";
+        }
     }
 }

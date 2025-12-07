@@ -136,6 +136,7 @@
             this.btn_AtivarDesativar.TabIndex = 8;
             this.btn_AtivarDesativar.Text = "Ativar/Desativar Usuário";
             this.btn_AtivarDesativar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_AtivarDesativar.Click += new System.EventHandler(this.btn_AtivarDesativar_Click);
             // 
             // btn_Senha
             // 
@@ -156,6 +157,7 @@
             this.btn_Senha.TabIndex = 7;
             this.btn_Senha.Text = "Alterar Senha";
             this.btn_Senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_Senha.Click += new System.EventHandler(this.btn_Senha_Click);
             // 
             // btn_Listar
             // 
@@ -196,6 +198,7 @@
             this.btn_Permissao.TabIndex = 4;
             this.btn_Permissao.Text = "Permissões";
             this.btn_Permissao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_Permissao.Click += new System.EventHandler(this.btn_Permissao_Click);
             // 
             // btn_Manager
             // 

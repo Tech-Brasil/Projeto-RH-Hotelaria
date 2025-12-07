@@ -1,16 +1,10 @@
-﻿using Projeto_RH_HOTELARIA.Data.IRepository;
-using Projeto_RH_HOTELARIA.Data.Repository;
+﻿using Projeto_RH_HOTELARIA.Data.Repository;
 using Projeto_RH_HOTELARIA.Models.RH;
 using Projeto_RH_HOTELARIA.Services;
 using Projeto_RH_HOTELARIA.Utils;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca
@@ -48,6 +42,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca
                 MessageBox.Show("Você precisa preencher ao menos um campo para buscar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             try
             {
                 dgv_Resultado.Rows.Clear();

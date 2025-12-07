@@ -1,41 +1,35 @@
 ﻿using BCrypt.Net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
+using Projeto_RH_HOTELARIA.Utils.Model;
 
 namespace Projeto_RH_HOTELARIA.Utils
 {
     class Criptografia
     {
-        public static string HashSenha(string senha)
+        public static HashResult HashSenha(string senha)
         {
-            string hash = null;
-            if (Validacoes.SenhaValida(senha) == true)
+            if(!Validacoes.SenhaValida(senha))
             {
-                hash = BCrypt.Net.BCrypt.HashPassword(senha);
-                return hash;
+                return new HashResult
+                {
+                    Success = false,
+                    Hash = null,
+                    Message = "A senha não atende aos requisitos mínimos."
+                };
             }
-            else
+
+            string hash = BCrypt.Net.BCrypt.HashPassword(senha);
+
+            return new HashResult
             {
-                throw new Exception("A senha não é valida!");
-            }
-            
+                Success = true,
+                Hash = hash,
+                Message = "Senha válido."
+            };
         }
 
         public static bool Verificar(string senha, string hashDB)
         {
-            bool verify = BCrypt.Net.BCrypt.Verify(senha, hashDB);
-            if(verify == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return BCrypt.Net.BCrypt.Verify(senha, hashDB);
         }
     }
 }

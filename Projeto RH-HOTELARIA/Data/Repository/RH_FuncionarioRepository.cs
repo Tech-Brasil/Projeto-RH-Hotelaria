@@ -13,20 +13,13 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 {
     public class RH_FuncionarioRepository : IRH_Funcionario
     {
-        private readonly string _context;
-
-        public RH_FuncionarioRepository()
-        {
-            _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
-        }
-
         private object DbNull(object value) => value ?? DBNull.Value;
 
         public void Inserir(RH_Funcionario funcionario)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
@@ -55,7 +48,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
@@ -85,7 +78,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
@@ -108,7 +101,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);
@@ -149,7 +142,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_RH_Funcionario", conn);

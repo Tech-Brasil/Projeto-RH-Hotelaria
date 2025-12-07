@@ -7,11 +7,12 @@
     <ProjectGuid>{A64516B7-4CE8-4A58-B742-EC1A43A51E68}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Projeto_RH_HOTELARIA</RootNamespace>
-    <AssemblyName>Projeto RH-HOTELARIA</AssemblyName>
+    <AssemblyName>Hotelaria</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon-Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
@@ -134,6 +137,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Db.cs" />
     <Compile Include="Data\IRepository\IRH_DocumentosPessoa.cs" />
     <Compile Include="Data\IRepository\IRH_Funcionario.cs" />
     <Compile Include="Data\IRepository\IRH_Pessoa.cs" />
@@ -167,11 +171,23 @@
     <Compile Include="Forms\Principal\Usuários\frmUsuariosSubmenu.Designer.cs">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.cs">
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Alterar\frmAlterarUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.Designer.cs">
-      <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Alterar\frmAlterarUser.Designer.cs">
+      <DependentUpon>frmAlterarUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.Designer.cs">
+      <DependentUpon>frmBuscarDocPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarPessoa.Designer.cs">
+      <DependentUpon>frmBuscarPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.cs">
       <SubType>Form</SubType>
@@ -179,16 +195,41 @@
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.Designer.cs">
       <DependentUpon>frmBuscarRG.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarUser.Designer.cs">
+      <DependentUpon>frmBuscarUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAlterarSenha.Designer.cs">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAtivDesaUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmAtivDesaUser.Designer.cs">
+      <DependentUpon>frmAtivDesaUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.Designer.cs">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.Designer.cs">
+      <DependentUpon>frmPermissoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\RH\RH_DocumentosPessoa.cs" />
     <Compile Include="Models\RH\RH_Endereco.cs" />
     <Compile Include="Models\RH\RH_Funcionario.cs" />
     <Compile Include="Models\RH\RH_Pessoa.cs" />
+    <Compile Include="Models\SYS\LocalSYS\Enum\UserRole.cs" />
     <Compile Include="Models\SYS\LocalSYS\SYS_Cidade.cs" />
     <Compile Include="Models\SYS\LocalSYS\SYS_Estado.cs" />
     <Compile Include="Models\SYS\LocalSYS\SYS_Pais.cs" />
@@ -212,6 +253,7 @@
     <Compile Include="Services\SYS_UsuarioService.cs" />
     <Compile Include="Utils\Criptografia.cs" />
     <Compile Include="Utils\ImageUtil.cs" />
+    <Compile Include="Utils\Model\HashResult.cs" />
     <Compile Include="Utils\UIStyle.cs" />
     <Compile Include="Utils\Validacoes.cs" />
     <EmbeddedResource Include="Forms\frmCarregamento.resx">
@@ -226,14 +268,32 @@
     <EmbeddedResource Include="Forms\Principal\Usuários\frmUsuariosSubmenu.resx">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarFunc.resx">
-      <DependentUpon>frmBuscarFunc.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Alterar\frmAlterarUser.resx">
+      <DependentUpon>frmAlterarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.resx">
+      <DependentUpon>frmBuscarDocPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarPessoa.resx">
+      <DependentUpon>frmBuscarPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarRG.resx">
       <DependentUpon>frmBuscarRG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarUser.resx">
+      <DependentUpon>frmBuscarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmAlterarSenha.resx">
+      <DependentUpon>frmAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmAtivDesaUser.resx">
+      <DependentUpon>frmAtivDesaUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.resx">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.resx">
+      <DependentUpon>frmPermissoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -385,6 +445,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-buscar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon-Logo.ico" />
+    <None Include="Resources\icon-selecionar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

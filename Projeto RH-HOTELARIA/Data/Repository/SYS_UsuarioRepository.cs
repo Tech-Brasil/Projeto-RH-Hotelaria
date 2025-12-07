@@ -2,31 +2,20 @@
 using Projeto_RH_HOTELARIA.Models.SYS;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projeto_RH_HOTELARIA.Data.Repository
 {
     public class SYS_UsuarioRepository : ISYS_Usuario
     {
-        private readonly string _context;
-
-        public SYS_UsuarioRepository()
-        {
-            _context = ConfigurationManager.ConnectionStrings["Projeto_RHotelaria"].ConnectionString;
-        }
-
         private object DbNull(object value) => value ?? DBNull.Value;
 
         public void Inserir(SYS_Usuario usuario)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
@@ -38,7 +27,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.Parameters.AddWithValue("@SenhaHash", usuario.SenhaHash);
                     cmd.Parameters.AddWithValue("@Role", usuario.Role);
                     cmd.Parameters.AddWithValue("@Ativo", usuario.Ativo);
-                    cmd.Parameters.AddWithValue("@Foto", DbNull(usuario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
@@ -53,7 +41,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
@@ -66,7 +54,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                     cmd.Parameters.AddWithValue("@SenhaHash", usuario.SenhaHash);
                     cmd.Parameters.AddWithValue("@Role", usuario.Role);
                     cmd.Parameters.AddWithValue("@Ativo", usuario.Ativo);
-                    cmd.Parameters.AddWithValue("@Foto", DbNull(usuario.Foto));
 
                     cmd.ExecuteNonQuery();
                 }
@@ -81,7 +68,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
@@ -104,7 +91,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
@@ -124,7 +111,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                                 SenhaHash = reader["SenhaHash"].ToString(),
                                 Role = reader["Role"].ToString(),
                                 Ativo = (bool)reader["Ativo"],
-                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             };
                         }
                     }
@@ -144,7 +130,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
@@ -164,7 +150,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                                 SenhaHash = reader["SenhaHash"].ToString(),
                                 Role = reader["Role"].ToString(),
                                 Ativo = (bool)reader["Ativo"],
-                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             };
                         }
                     }
@@ -184,7 +169,7 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(_context))
+                using (SqlConnection conn = Db.Connect())
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("usp_SYS_Usuario", conn);
@@ -202,7 +187,6 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
                                 Login = reader["Login"].ToString(),
                                 Role = reader["Role"].ToString(),
                                 Ativo = (bool)reader["Ativo"],
-                                Foto = reader["Foto"] == DBNull.Value ? null : (byte[])reader["Foto"]
                             });
                         }
                     }
@@ -214,6 +198,22 @@ namespace Projeto_RH_HOTELARIA.Data.Repository
             }
 
             return lista;
+        }
+
+        public void AtualizarUltimoLogin(int usuarioId)
+        {
+            using(SqlConnection conn = Db.Connect())
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE SYS_Usuario SET UltimoLogin = GETDATE() WHERE UsuarioId = @id",
+                    conn);
+
+                cmd.Parameters.Add("id", SqlDbType.Int).Value = usuarioId;
+
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
