@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
 [assembly: AssemblyTitle("Projeto RH-HOTELARIA")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Projeto de GitHub - RH")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Tech Brasil")]
 [assembly: AssemblyProduct("Projeto RH-HOTELARIA")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Número da Versão
 //      Revisão
 //
-[assembly: AssemblyVersion("1.2.0.12")]
-[assembly: AssemblyFileVersion("1.2.0.12")]
+[assembly: AssemblyVersion("1.2.0.14")]
+[assembly: AssemblyFileVersion("1.2.0.14")]

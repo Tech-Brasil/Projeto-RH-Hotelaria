@@ -7,11 +7,12 @@
     <ProjectGuid>{A64516B7-4CE8-4A58-B742-EC1A43A51E68}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Projeto_RH_HOTELARIA</RootNamespace>
-    <AssemblyName>Projeto RH-HOTELARIA</AssemblyName>
+    <AssemblyName>Hotelaria</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +46,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon-Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
@@ -168,6 +171,12 @@
     <Compile Include="Forms\Principal\Usuários\frmUsuariosSubmenu.Designer.cs">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Alterar\frmAlterarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\Alterar\frmAlterarUser.Designer.cs">
+      <DependentUpon>frmAlterarUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\frmUsuariosSubmenu.resx">
       <DependentUpon>frmUsuariosSubmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Alterar\frmAlterarUser.resx">
+      <DependentUpon>frmAlterarUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\Busca\frmBuscarDocPessoa.resx">
       <DependentUpon>frmBuscarDocPessoa.cs</DependentUpon>
@@ -433,6 +445,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-buscar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon-Logo.ico" />
+    <None Include="Resources\icon-selecionar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

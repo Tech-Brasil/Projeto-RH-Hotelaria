@@ -6,7 +6,6 @@ using Projeto_RH_HOTELARIA.Models.SYS.LocalSYS.Enum;
 using Projeto_RH_HOTELARIA.Services;
 using Projeto_RH_HOTELARIA.Utils;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers

@@ -409,3 +409,38 @@ BEGIN
     VALUES (NULL, @Acao, @Tabela, @ChaveRegistro);
 END;
 GO
+
+INSERT INTO SYS_Pais (Nome, Sigla) VALUES 
+('Brasil', 'BRA');
+
+INSERT INTO SYS_Estado (Nome, Sigla, PaisNome) VALUES 
+('Rio de Janeiro', 'RJ', 'Brasil');
+
+INSERT INTO SYS_Cidade (Nome, EstadoNome) VALUES 
+('Rio de Janeiro', 'Rio de Janeiro');
+GO
+
+INSERT INTO RH_Endereco (Logradouro, Numero, Complemento, Bairro, CEP, CidadeNome)
+VALUES 
+('Rua A', '10', NULL, 'Centro', '20000000', 'Rio de Janeiro'),
+('Rua B', '20', NULL, 'Copacabana', '22000000', 'Rio de Janeiro');
+GO
+
+INSERT INTO RH_Pessoa (Nome, DataNascimento, Genero, Nacionalidade, EstadoCivil, EnderecoId)
+VALUES
+('Administrador do Sistema', '1990-01-01', 'M', 'Brasileiro', 'Solteiro', 1),
+('João Silva', '1995-05-10', 'M', 'Brasileiro', 'Solteiro', 2);
+GO
+
+INSERT INTO RH_DocumentosPessoa 
+(RG, PessoaNome, CPF, TituloEleitor, CTPS_Numero, CTPS_Serie, CNH_Numero, CNH_Categoria, CNH_Validade, PIS)
+VALUES
+('111111111', 'Administrador do Sistema', '11111111111', '123456789', '0001', '01', '999999999', 'B', '2030-01-01', '123456'),
+('222222222', 'João Silva', '22222222222', '987654321', '0002', '02', '888888888', 'A', '2030-01-01', '654321');
+GO
+
+INSERT INTO SYS_Usuario (RG, Login, SenhaHash, Role, Ativo)
+VALUES
+('111111111', 'admin', 'admin123', 'Administrador', 1),
+('222222222', 'joao.silva', '12345', 'Convidado', 1);
+GO
