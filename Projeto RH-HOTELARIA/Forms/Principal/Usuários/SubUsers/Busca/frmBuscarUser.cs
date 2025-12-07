@@ -11,8 +11,9 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca
 {
     public partial class frmBuscarUser : Form
     {
+        #region Private Fields
         private readonly SYS_UsuarioService _UsuarioService;
-
+        #endregion
         public frmBuscarUser()
         {
             InitializeComponent();
@@ -88,6 +89,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers.Busca
             if (dgv_Resultado.Rows.Count == 0)
             {
                 MessageBox.Show("Nenhum usuário selecionado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             string RG = dgv_Resultado.SelectedRows[0].Cells["RG"].Value.ToString();

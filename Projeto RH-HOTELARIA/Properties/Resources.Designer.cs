@@ -303,6 +303,16 @@ namespace Projeto_RH_HOTELARIA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_selecionar {
+            get {
+                object obj = ResourceManager.GetObject("icon-selecionar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_senha {
             get {
                 object obj = ResourceManager.GetObject("icon-senha", resourceCulture);
