@@ -1,4 +1,5 @@
-﻿using Projeto_RH_HOTELARIA.Forms.Principal.Usuários;
+﻿using Projeto_RH_HOTELARIA.Forms.Principal.Funcionario;
+using Projeto_RH_HOTELARIA.Forms.Principal.Usuários;
 using Projeto_RH_HOTELARIA.Models.SYS;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,21 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal
             //_usuario = usuario; 
         }
 
+        #region Eventos
+
         private void btn_Usuarios_Click(object sender, EventArgs e)
         {
             frmUsuariosSubmenu usuariosSubmenu = new frmUsuariosSubmenu();
             AbrirForm(usuariosSubmenu);
         }
+
+        private void btn_Funcionario_Click(object sender, EventArgs e)
+        {
+            frmFuncionarioSubMenu funcionarioSubMenu = new frmFuncionarioSubMenu();
+            AbrirForm(funcionarioSubMenu);
+        }
+
+        #endregion
 
         #region Panel
 
@@ -67,5 +78,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal
         }
 
         #endregion
+
+
     }
 }

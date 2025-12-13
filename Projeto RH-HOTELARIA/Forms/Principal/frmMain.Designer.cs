@@ -124,6 +124,7 @@
             this.btn_Funcionario.TabIndex = 6;
             this.btn_Funcionario.Text = "| Funcionários";
             this.btn_Funcionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_Funcionario.Click += new System.EventHandler(this.btn_Funcionario_Click);
             // 
             // lbl_Logo
             // 
