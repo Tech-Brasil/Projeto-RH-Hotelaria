@@ -13,6 +13,8 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários
             ConfigurarLayout();
         }
 
+
+        #region Configurações de Formulário
         private void ConfigurarLayout()
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -20,6 +22,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários
             this.Dock = DockStyle.Fill;
             this.BackColor = Color.FromArgb(232, 232, 232);
         }
+        #endregion
 
         #region Button
 

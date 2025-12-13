@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciarContas));
             this.pnl_Fundo = new System.Windows.Forms.Panel();
             this.pnl_Conteudo = new System.Windows.Forms.Panel();
             this.pnl_Pessoa = new System.Windows.Forms.Panel();
@@ -60,6 +61,7 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Login = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Requerimento = new System.Windows.Forms.Label();
             this.Ibtn_BuscarRG = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbl_Lcargo = new System.Windows.Forms.Label();
             this.lbl_Login = new System.Windows.Forms.Label();
@@ -83,7 +85,6 @@
             this.btn_Editar = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.btn_Buscar = new Guna.UI2.WinForms.Guna2Button();
-            this.lbl_Requerimento = new System.Windows.Forms.Label();
             this.pnl_Fundo.SuspendLayout();
             this.pnl_Conteudo.SuspendLayout();
             this.pnl_Pessoa.SuspendLayout();
@@ -471,6 +472,18 @@
             this.panel1.Size = new System.Drawing.Size(497, 196);
             this.panel1.TabIndex = 2;
             // 
+            // lbl_Requerimento
+            // 
+            this.lbl_Requerimento.AutoSize = true;
+            this.lbl_Requerimento.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Requerimento.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Requerimento.Location = new System.Drawing.Point(290, 136);
+            this.lbl_Requerimento.Name = "lbl_Requerimento";
+            this.lbl_Requerimento.Size = new System.Drawing.Size(167, 52);
+            this.lbl_Requerimento.TabIndex = 18;
+            this.lbl_Requerimento.Text = "Requisitos da senha:\r\n• Mínimo de 8 caracteres\r\n• Pelo menos 1 letra maiúscula\r\n•" +
+    " Pelo menos 1 letra minúscula\r\n";
+            // 
             // Ibtn_BuscarRG
             // 
             this.Ibtn_BuscarRG.BackColor = System.Drawing.Color.Transparent;
@@ -747,18 +760,6 @@
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
-            // lbl_Requerimento
-            // 
-            this.lbl_Requerimento.AutoSize = true;
-            this.lbl_Requerimento.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Requerimento.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Requerimento.Location = new System.Drawing.Point(290, 136);
-            this.lbl_Requerimento.Name = "lbl_Requerimento";
-            this.lbl_Requerimento.Size = new System.Drawing.Size(167, 52);
-            this.lbl_Requerimento.TabIndex = 18;
-            this.lbl_Requerimento.Text = "Requisitos da senha:\r\n• Mínimo de 8 caracteres\r\n• Pelo menos 1 letra maiúscula\r\n•" +
-    " Pelo menos 1 letra minúscula\r\n";
-            // 
             // frmGerenciarContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,6 +768,7 @@
             this.Controls.Add(this.pnl_Fundo);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGerenciarContas";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

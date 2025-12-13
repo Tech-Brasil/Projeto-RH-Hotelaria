@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuariosSubmenu));
             this.lbl_SubTitulo = new System.Windows.Forms.Label();
             this.lbl_Categoria = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,9 +62,9 @@
             this.lbl_Categoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Categoria.Location = new System.Drawing.Point(11, 52);
             this.lbl_Categoria.Name = "lbl_Categoria";
-            this.lbl_Categoria.Size = new System.Drawing.Size(163, 27);
+            this.lbl_Categoria.Size = new System.Drawing.Size(124, 27);
             this.lbl_Categoria.TabIndex = 2;
-            this.lbl_Categoria.Text = "Gerenciamento User";
+            this.lbl_Categoria.Text = "Gerenciamento";
             this.lbl_Categoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Categoria.UseCompatibleTextRendering = true;
             // 
@@ -80,7 +81,7 @@
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Location = new System.Drawing.Point(4, 234);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 2);
+            this.panel2.Size = new System.Drawing.Size(178, 3);
             this.panel2.TabIndex = 4;
             // 
             // lbl_Categoria1
@@ -240,8 +241,10 @@
             this.Controls.Add(this.btn_Manager);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUsuariosSubmenu";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPermissoes));
             this.pnl_Top = new System.Windows.Forms.Panel();
             this.lbl_CategoriaT = new System.Windows.Forms.Label();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.pnl_Conteudo = new System.Windows.Forms.Panel();
             this.dgv_Listagem = new System.Windows.Forms.DataGridView();
+            this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CriadoEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Funcao = new System.Windows.Forms.Panel();
             this.btn_AtiPesquisa = new Guna.UI2.WinForms.Guna2Button();
             this.btn_Selecionar = new Guna.UI2.WinForms.Guna2Button();
@@ -41,12 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cBox_Cargo = new System.Windows.Forms.ComboBox();
             this.txtBox_RG = new System.Windows.Forms.TextBox();
-            this.UsuarioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CriadoEm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_Top.SuspendLayout();
             this.pnl_Conteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Listagem)).BeginInit();
@@ -117,6 +118,43 @@
             this.dgv_Listagem.Size = new System.Drawing.Size(840, 432);
             this.dgv_Listagem.TabIndex = 1;
             this.dgv_Listagem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Listagem_CellClick);
+            // 
+            // UsuarioId
+            // 
+            this.UsuarioId.HeaderText = "ID";
+            this.UsuarioId.Name = "UsuarioId";
+            this.UsuarioId.ReadOnly = true;
+            this.UsuarioId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // RG
+            // 
+            this.RG.HeaderText = "RG";
+            this.RG.Name = "RG";
+            this.RG.ReadOnly = true;
+            // 
+            // Login
+            // 
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.HeaderText = "Cargo";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            // 
+            // Ativo
+            // 
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            // 
+            // CriadoEm
+            // 
+            this.CriadoEm.HeaderText = "Data de Criação";
+            this.CriadoEm.Name = "CriadoEm";
+            this.CriadoEm.ReadOnly = true;
             // 
             // pnl_Funcao
             // 
@@ -226,43 +264,6 @@
             this.txtBox_RG.TabIndex = 0;
             this.txtBox_RG.TextChanged += new System.EventHandler(this.txtBox_RG_TextChanged);
             // 
-            // UsuarioId
-            // 
-            this.UsuarioId.HeaderText = "ID";
-            this.UsuarioId.Name = "UsuarioId";
-            this.UsuarioId.ReadOnly = true;
-            this.UsuarioId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // RG
-            // 
-            this.RG.HeaderText = "RG";
-            this.RG.Name = "RG";
-            this.RG.ReadOnly = true;
-            // 
-            // Login
-            // 
-            this.Login.HeaderText = "Login";
-            this.Login.Name = "Login";
-            this.Login.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.HeaderText = "Cargo";
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            // 
-            // Ativo
-            // 
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            // 
-            // CriadoEm
-            // 
-            this.CriadoEm.HeaderText = "Data de Criação";
-            this.CriadoEm.Name = "CriadoEm";
-            this.CriadoEm.ReadOnly = true;
-            // 
             // frmPermissoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +274,7 @@
             this.Controls.Add(this.pnl_Top);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPermissoes";
