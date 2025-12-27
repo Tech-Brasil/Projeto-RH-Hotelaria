@@ -7,3 +7,6 @@ packages/
 *.suo
 *.cache
 *.log
+/Projeto RH-HOTELARIA/Properties/Settings.Designer.cs
+/Projeto RH-HOTELARIA/Properties/Settings.settings
+/Projeto RH-HOTELARIA/App.config
