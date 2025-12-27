@@ -71,9 +71,9 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
                 txtBox_Login.Clear();
                 txtBox_RG.Clear();
                 c_Box_Cargo.SelectedIndex = -1;
-
-                dgv_Listar.DataSource = false;
+                dgv_Listar.DataSource = null;
                 dgv_Listar.Rows.Clear();
+
             }
 
 
