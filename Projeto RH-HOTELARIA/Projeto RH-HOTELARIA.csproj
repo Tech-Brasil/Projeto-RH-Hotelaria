@@ -219,6 +219,12 @@
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.Designer.cs">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmListagemUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal\Usuários\SubUsers\frmListagemUser.Designer.cs">
+      <DependentUpon>frmListagemUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmGerenciarContas.resx">
       <DependentUpon>frmGerenciarContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmListagemUser.resx">
+      <DependentUpon>frmListagemUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principal\Usuários\SubUsers\frmPermissoes.resx">
       <DependentUpon>frmPermissoes.cs</DependentUpon>
