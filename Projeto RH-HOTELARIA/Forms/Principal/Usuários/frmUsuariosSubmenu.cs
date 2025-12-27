@@ -57,6 +57,14 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários
             var mainForm = (frmMain)Application.OpenForms["frmMain"];
             mainForm.AbrirFormNoPainel(frmAtivarDesativar);
         }
+        private void btn_Listar_Click(object sender, EventArgs e)
+        {
+            var frmListagemUser = new frmListagemUser();
+
+            var mainForm = (frmMain)Application.OpenForms["frmMain"];
+            mainForm.AbrirFormNoPainel(frmListagemUser);
+        }
+
 
         #endregion
 
