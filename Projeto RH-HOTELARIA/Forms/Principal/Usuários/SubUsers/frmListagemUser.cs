@@ -24,6 +24,7 @@ namespace Projeto_RH_HOTELARIA.Forms.Principal.Usuários.SubUsers
             InitializeComponent();
         }
         #region load
+
         private void frmListagemUser_Load(object sender, EventArgs e)
         {
             UIStyle.ArredondarPanelV2(pnl_top, 0, 0, 30, 30);
